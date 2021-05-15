@@ -3,9 +3,12 @@ import { Link } from "react-router-dom";
 
 function Nav() {
     return (
-        <nav className="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav className="navbar navbar-expand-md navbar-dark bg-dark shadow-sm position-absolute w-100">
             <div className="container">
-                <Link className="navbar-brand text-uppercase" to="/">
+                <Link
+                    className="navbar-brand text-uppercase text-white-hover"
+                    to="/"
+                >
                     green garden shop
                 </Link>
                 <button
@@ -27,12 +30,18 @@ function Nav() {
                     <ul className="navbar-nav mr-auto"></ul>
                     <ul className="navbar-nav ml-auto">
                         <li className="nav-item">
-                            <Link className="nav-link" to="/login">
+                            <Link
+                                className="nav-link text-white-hover"
+                                to="/login"
+                            >
                                 Увійти
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/register">
+                            <Link
+                                className="nav-link text-white-hover"
+                                to="/register"
+                            >
                                 Реєстрація
                             </Link>
                         </li>

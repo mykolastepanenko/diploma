@@ -1,8 +1,38 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url("https://fonts.googleapis.com/css?family=Nunito");
 
 // Variables
-@import 'variables';
+@import "variables";
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
+
+// body {
+//     background-image: url("/img/background.jpg");
+//     color: white !important;
+// }
+
+// own sections
+
+.welcome {
+    background-color: darkolivegreen;
+}
+
+// own components
+
+// bootstrap
+
+.navbar {
+    background-color: #FF9640;
+}
+
+// own utilities
+
+.grayscale {
+    filter: grayscale(60%);
+    transition-duration: 300ms;
+    &:hover {
+        filter: none;
+        transition-duration: 300ms;
+    }
+}

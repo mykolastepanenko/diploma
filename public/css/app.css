@@ -10002,3 +10002,19 @@ h3 {
     border-color: #dee2e6;
   }
 }
+.welcome {
+  background-color: darkolivegreen;
+}
+
+.navbar {
+  background-color: #FF9640;
+}
+
+.grayscale {
+  filter: grayscale(60%);
+  transition-duration: 300ms;
+}
+.grayscale:hover {
+  filter: none;
+  transition-duration: 300ms;
+}

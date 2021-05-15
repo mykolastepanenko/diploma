@@ -4,9 +4,8 @@ import Nav from "../../components/Nav";
 function Login() {
     return (
         <>
-            <Nav />
             <div className="container">
-                <h1>Login page</h1>
+                <h1 className="pt-5">Login page</h1>
             </div>
         </>
     );
