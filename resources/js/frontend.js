@@ -10,6 +10,8 @@ import Footer from "./components/Footer";
 import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
 
+const app = document.getElementById("app");
+
 function FrontEnd() {
     return (
         <Router>
@@ -25,7 +27,7 @@ function FrontEnd() {
                     <Product />
                 </Route>
                 <Route path="/">
-                    <Home />
+                    <Home app={app} />
                 </Route>
             </Switch>
             <Footer />

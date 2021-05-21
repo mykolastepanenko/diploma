@@ -1,3 +1,7 @@
+<?php
+$categories = DB::select('select * from categories');
+?>
+
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -22,7 +26,7 @@
 </head>
 
 <body>
-    <div id="app"></div>
+    <div id="app" data-categories="{{json_encode($categories)}}"></div>
 </body>
 
 </html>

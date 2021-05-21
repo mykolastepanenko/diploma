@@ -2032,21 +2032,25 @@ function CategoryContainer(props) {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         className: "col",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_ItemCategory__WEBPACK_IMPORTED_MODULE_1__.default, {
+          category: props.categories[0],
           img: props.img
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         className: "col",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_ItemCategory__WEBPACK_IMPORTED_MODULE_1__.default, {
+          category: props.categories[1],
           img: props.img
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         className: "col",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_ItemCategory__WEBPACK_IMPORTED_MODULE_1__.default, {
+          category: props.categories[2],
           img: props.img
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         className: "col",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_ItemCategory__WEBPACK_IMPORTED_MODULE_1__.default, {
+          category: props.categories[3],
           img: props.img
         })
       })]
@@ -2223,8 +2227,11 @@ function ItemCategory(props) {
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
         className: "card-img-overlay text-white d-flex justify-content-center align-items-center",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h5", {
-          className: "card-title text-uppercase mb-0",
-          children: "category"
+          className: "card-title text-uppercase text-center mb-0",
+          style: {
+            lineHeight: 1.5
+          },
+          children: props.category.name
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
         to: "/category",
@@ -2432,6 +2439,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+var app = document.getElementById("app");
 
 function FrontEnd() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.BrowserRouter, {
@@ -2447,7 +2455,9 @@ function FrontEnd() {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_pages_Product__WEBPACK_IMPORTED_MODULE_3__.default, {})
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Route, {
         path: "/",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_pages_Home__WEBPACK_IMPORTED_MODULE_2__.default, {})
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_pages_Home__WEBPACK_IMPORTED_MODULE_2__.default, {
+          app: app
+        })
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_Footer__WEBPACK_IMPORTED_MODULE_5__.default, {})]
   });
@@ -2478,6 +2488,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_ItemContainer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/ItemContainer */ "./resources/js/components/ItemContainer.js");
 /* harmony import */ var _components_CategoryContainer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/CategoryContainer */ "./resources/js/components/CategoryContainer.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
 
 
@@ -2487,7 +2502,33 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function Home() {
+
+function Home(props) {
+  var categories = JSON.parse(document.getElementById("app").getAttribute("data-categories"));
+  console.log(categories);
+
+  for (var key in categories) {
+    console.log(categories[key]);
+  }
+
+  var _iterator = _createForOfIteratorHelper(categories),
+      _step;
+
+  try {
+    for (_iterator.s(); !(_step = _iterator.n()).done;) {
+      var category = _step.value;
+      console.log(category);
+
+      for (var _key in category) {
+        console.log("".concat(_key, ": ").concat(category[_key]));
+      }
+    }
+  } catch (err) {
+    _iterator.e(err);
+  } finally {
+    _iterator.f();
+  }
+
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_WelcomeContainer__WEBPACK_IMPORTED_MODULE_2__.default, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
       className: "container",
@@ -2518,6 +2559,7 @@ function Home() {
             })
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_CategoryContainer__WEBPACK_IMPORTED_MODULE_4__.default, {
+          categories: categories,
           img: "https://fruit-boutique.com.ua/content/images/16/600x600l80nn0/semena-lna-14836989027242.jpg"
         })]
       })]
