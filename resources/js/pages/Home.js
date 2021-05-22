@@ -1,10 +1,22 @@
 import React from "react";
-import Nav from "../components/Nav";
 import WelcomeContainer from "../components/WelcomeContainer";
 import ItemContainer from "../components/ItemContainer";
 import CategoryContainer from "../components/CategoryContainer";
 
-function Home() {
+function Home(props) {
+    const categories = JSON.parse(
+        document.getElementById("app").getAttribute("data-categories")
+    );
+    console.log(categories);
+    for (let key in categories) {
+        console.log(categories[key]);
+    }
+    for (let category of categories) {
+        console.log(category);
+        for (let key in category) {
+            console.log(`${key}: ${category[key]}`);
+        }
+    }
     return (
         <>
             <WelcomeContainer />
@@ -28,6 +40,7 @@ function Home() {
                         </div>
                     </div>
                     <CategoryContainer
+                        categories={categories}
                         img={
                             "https://fruit-boutique.com.ua/content/images/16/600x600l80nn0/semena-lna-14836989027242.jpg"
                         }

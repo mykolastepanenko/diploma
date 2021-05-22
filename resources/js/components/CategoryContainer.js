@@ -6,16 +6,16 @@ function CategoryContainer(props) {
         <>
             <div className={"row"}>
                 <div className="col">
-                    <ItemCategory img={props.img} />
+                    <ItemCategory category={props.categories[0]} img={props.img} />
                 </div>
                 <div className="col">
-                    <ItemCategory img={props.img} />
+                    <ItemCategory category={props.categories[1]} img={props.img} />
                 </div>
                 <div className="col">
-                    <ItemCategory img={props.img} />
+                    <ItemCategory category={props.categories[2]} img={props.img} />
                 </div>
                 <div className="col">
-                    <ItemCategory img={props.img} />
+                    <ItemCategory category={props.categories[3]} img={props.img} />
                 </div>
             </div>
         </>
