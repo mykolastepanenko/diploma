@@ -2,7 +2,7 @@ import React from "react";
 import ItemCategory from "./ItemCategory";
 import Slider from "react-slick";
 
-function CategoryContainer(props) {
+function BestCategoryContainer(props) {
     const settings = {
         speed: 500,
         slidesToShow: 4,
@@ -63,4 +63,4 @@ function CategoryContainer(props) {
     );
 }
 
-export default CategoryContainer;
+export default BestCategoryContainer;

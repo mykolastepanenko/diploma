@@ -1,7 +1,7 @@
 import React from "react";
 import ItemCard from "./ItemCard";
 
-function ItemBlock(props) {
+function BestProductsContainer(props) {
     return (
         <>
             <div className={"row"}>
@@ -22,4 +22,4 @@ function ItemBlock(props) {
     );
 }
 
-export default ItemBlock;
+export default BestProductsContainer;
