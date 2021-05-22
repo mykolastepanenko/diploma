@@ -28,6 +28,7 @@ function Home(props) {
                         </div>
                     </div>
                     <BestProductsContainer
+                        categories={categories}
                         img={
                             "https://cdn2.flowwow.com/data/blog/1562599250_29351868.jpg"
                         }

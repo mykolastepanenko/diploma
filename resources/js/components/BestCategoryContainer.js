@@ -9,6 +9,7 @@ function BestCategoryContainer(props) {
         slidesToScroll: 1,
         autoplay: true,
         infinite: true,
+        loop: true,
         responsive: [
             {
                 breakpoint: 1024,
