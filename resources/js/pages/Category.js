@@ -15,7 +15,7 @@ export default function (props) {
                     <div className={"col col-md-4"}>
                         <img
                             className={"w-100"}
-                            src="https://cdn2.flowwow.com/data/blog/1562599250_29351868.jpg"
+                            src={category.img}
                             alt=""
                         />
                     </div>

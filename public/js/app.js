@@ -2040,7 +2040,6 @@ function BestCategoryContainer(props) {
     slidesToScroll: 1,
     autoplay: true,
     infinite: true,
-    loop: true,
     responsive: [{
       breakpoint: 1024,
       settings: {
@@ -2065,20 +2064,15 @@ function BestCategoryContainer(props) {
         className: "col",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_slick__WEBPACK_IMPORTED_MODULE_2__.default, _objectSpread(_objectSpread({}, settings), {}, {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_ItemCategory__WEBPACK_IMPORTED_MODULE_1__.default, {
-            category: props.categories[0],
-            img: props.img
+            category: props.categories[0]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_ItemCategory__WEBPACK_IMPORTED_MODULE_1__.default, {
-            category: props.categories[1],
-            img: props.img
+            category: props.categories[1]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_ItemCategory__WEBPACK_IMPORTED_MODULE_1__.default, {
-            category: props.categories[2],
-            img: props.img
+            category: props.categories[2]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_ItemCategory__WEBPACK_IMPORTED_MODULE_1__.default, {
-            category: props.categories[3],
-            img: props.img
+            category: props.categories[3]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_ItemCategory__WEBPACK_IMPORTED_MODULE_1__.default, {
-            category: props.categories[4],
-            img: props.img
+            category: props.categories[4]
           })]
         }))
       })
@@ -2275,11 +2269,12 @@ function ItemCategory(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
     className: "card mx-auto mb-3 grayscale",
     style: {
-      width: "14rem"
+      width: "14rem",
+      height: "14rem"
     },
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
-      src: props.img,
-      className: "card-img-top",
+      src: props.category.img,
+      className: "card-img-top w-100 h-100",
       alt: "..."
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
       className: "card-img-overlay text-white d-flex justify-content-center align-items-center",
@@ -2288,7 +2283,12 @@ function ItemCategory(props) {
         style: {
           lineHeight: 1.5
         },
-        children: props.category.name
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+          style: {
+            backgroundColor: "rgba(0,0,0,0.65)"
+          },
+          children: props.category.name
+        })
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
       to: "/category/".concat(props.category.id),
@@ -2567,7 +2567,7 @@ __webpack_require__.r(__webpack_exports__);
           className: "col col-md-4",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
             className: "w-100",
-            src: "https://cdn2.flowwow.com/data/blog/1562599250_29351868.jpg",
+            src: category.img,
             alt: ""
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
@@ -2655,16 +2655,13 @@ function Home(props) {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_WelcomeContainer__WEBPACK_IMPORTED_MODULE_1__.default, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
       className: "container",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("section", {
-        style: {
-          marginTop: "50px"
-        },
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
           className: "row",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
             className: "col",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h2", {
               className: "text-capitalize",
-              children: "best products"
+              children: "\u041D\u0430\u0439\u043A\u0440\u0430\u0449\u0456 \u043F\u0440\u043E\u0434\u0443\u043A\u0442\u0438"
             })
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_BestProductsContainer__WEBPACK_IMPORTED_MODULE_2__.default, {
@@ -2678,12 +2675,11 @@ function Home(props) {
             className: "col",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h2", {
               className: "text-capitalize",
-              children: "categories"
+              children: "\u043A\u0430\u0442\u0435\u0433\u043E\u0440\u0456\u0457"
             })
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_BestCategoryContainer__WEBPACK_IMPORTED_MODULE_3__.default, {
-          categories: categories,
-          img: "https://fruit-boutique.com.ua/content/images/16/600x600l80nn0/semena-lna-14836989027242.jpg"
+          categories: categories
         })]
       })]
     })]

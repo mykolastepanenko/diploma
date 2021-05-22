@@ -21,10 +21,10 @@ function Home(props) {
         <>
             <WelcomeContainer />
             <div className="container">
-                <section style={{ marginTop: "50px" }}>
+                <section>
                     <div className="row">
                         <div className="col">
-                            <h2 className={"text-capitalize"}>best products</h2>
+                            <h2 className={"text-capitalize"}>Найкращі продукти</h2>
                         </div>
                     </div>
                     <BestProductsContainer
@@ -37,15 +37,10 @@ function Home(props) {
                 <section>
                     <div className="row">
                         <div className="col">
-                            <h2 className={"text-capitalize"}>categories</h2>
+                            <h2 className={"text-capitalize"}>категорії</h2>
                         </div>
                     </div>
-                    <BestCategoryContainer
-                        categories={categories}
-                        img={
-                            "https://fruit-boutique.com.ua/content/images/16/600x600l80nn0/semena-lna-14836989027242.jpg"
-                        }
-                    />
+                    <BestCategoryContainer categories={categories} />
                 </section>
             </div>
         </>

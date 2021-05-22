@@ -3,8 +3,15 @@ import { Link } from "react-router-dom";
 
 function ItemCategory(props) {
     return (
-        <div className="card mx-auto mb-3 grayscale" style={{ width: "14rem" }}>
-            <img src={props.img} className="card-img-top" alt="..." />
+        <div
+            className="card mx-auto mb-3 grayscale"
+            style={{ width: "14rem", height: "14rem" }}
+        >
+            <img
+                src={props.category.img}
+                className="card-img-top w-100 h-100"
+                alt="..."
+            />
             <div className="card-img-overlay text-white d-flex justify-content-center align-items-center">
                 <h5
                     className="card-title text-uppercase text-center mb-0"
@@ -12,7 +19,9 @@ function ItemCategory(props) {
                         lineHeight: 1.5,
                     }}
                 >
-                    {props.category.name}
+                    <span style={{ backgroundColor: "rgba(0,0,0,0.65)" }}>
+                        {props.category.name}
+                    </span>
                 </h5>
             </div>
             <Link

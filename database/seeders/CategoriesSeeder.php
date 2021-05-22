@@ -12,9 +12,10 @@ class CategoriesSeeder extends Seeder
      *
      * @return void
      */
+
     public function run()
     {
-        $data = [
+        $name = [
             'Насіння',
             'Сажанці',
             'Добрива',
@@ -22,10 +23,23 @@ class CategoriesSeeder extends Seeder
             'Продукти харчування',
         ];
 
-        foreach ($data as $item) {
-            DB::table('categories')->insert([
-                'name' => $item,
-            ]);
+        $img = [
+            '/img/seeds.jpg',
+            '/img/seedlings.jpg',
+            '/img/fertilizers.jpg',
+            '/img/inventory.jpg',
+            '/img/food.jpg',
+        ];
+
+        $categories = [];
+
+        for ($i = 0; $i < count($name); $i++) {
+            $categories[] = [
+                'name' => $name[$i],
+                'img' => $img[$i]
+            ];
         }
+
+        DB::table('categories')->insert($categories);
     }
 }

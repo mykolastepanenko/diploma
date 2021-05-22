@@ -10320,6 +10320,10 @@ h3 {
     border-color: #dee2e6;
   }
 }
+section {
+  margin-top: 50px;
+}
+
 .welcome {
   background-color: darkolivegreen;
 }

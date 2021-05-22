@@ -9,7 +9,6 @@ function BestCategoryContainer(props) {
         slidesToScroll: 1,
         autoplay: true,
         infinite: true,
-        loop: true,
         responsive: [
             {
                 breakpoint: 1024,
@@ -37,26 +36,11 @@ function BestCategoryContainer(props) {
             <div className={"row"}>
                 <div className="col">
                     <Slider {...settings}>
-                        <ItemCategory
-                            category={props.categories[0]}
-                            img={props.img}
-                        />
-                        <ItemCategory
-                            category={props.categories[1]}
-                            img={props.img}
-                        />
-                        <ItemCategory
-                            category={props.categories[2]}
-                            img={props.img}
-                        />
-                        <ItemCategory
-                            category={props.categories[3]}
-                            img={props.img}
-                        />
-                        <ItemCategory
-                            category={props.categories[4]}
-                            img={props.img}
-                        />
+                        <ItemCategory category={props.categories[0]} />
+                        <ItemCategory category={props.categories[1]} />
+                        <ItemCategory category={props.categories[2]} />
+                        <ItemCategory category={props.categories[3]} />
+                        <ItemCategory category={props.categories[4]} />
                     </Slider>
                 </div>
             </div>
