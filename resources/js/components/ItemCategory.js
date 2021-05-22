@@ -19,7 +19,7 @@ function ItemCategory(props) {
                         {props.category.name}
                     </h5>
                 </div>
-                <Link to="/category" className="stretched-link"></Link>
+                <Link to={`/category/${props.category.id}`} className="stretched-link"></Link>
             </div>
         </>
     );

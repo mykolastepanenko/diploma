@@ -1,6 +1,10 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 
-function Product(props) {
+export default function (props) {
+    const category = props.categories[useParams().id - 1];
+    console.log(`/category/${useParams().id}`);
+    console.log(category);
     return (
         <>
             <div
@@ -17,7 +21,7 @@ function Product(props) {
                     </div>
                     <div className={"col col-md-8"}>
                         <div className="d-flex justify-content-between">
-                            <h1>Flowers</h1>
+                            <h1>{category.name}</h1>
                             <h1>4.99$</h1>
                         </div>
                         <p className="text-justify">
@@ -36,5 +40,3 @@ function Product(props) {
         </>
     );
 }
-
-export default Product;
