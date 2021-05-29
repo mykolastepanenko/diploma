@@ -17,12 +17,46 @@ Route::get('/', function () {
     return view('pages.frontend');
 });
 
+Route::get('/product', function(){
+    return view('pages.frontend');
+});
 
+Route::get('/product/1', function(){
+    return view('pages.frontend');
+});
 
-// Auth::routes();
+Route::get('/product/1', function(){
+    return view('pages.frontend');
+});
+Route::get('/product/2', function(){
+    return view('pages.frontend');
+});
+Route::get('/product/3', function(){
+    return view('pages.frontend');
+});
+Route::get('/product/4', function(){
+    return view('pages.frontend');
+});
+Route::get('/product/5', function(){
+    return view('pages.frontend');
+});
 
-// Route::get('/home', function () {
-//     return view('pages.home');
-// });
+Route::get('category/1', function(){
+    return view('pages.frontend');
+});
 
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('category/2', function(){
+    return view('pages.frontend');
+});
+
+Route::get('category/3', function(){
+    return view('pages.frontend');
+});
+
+Route::get('category/4', function(){
+    return view('pages.frontend');
+});
+
+Route::get('category/5', function(){
+    return view('pages.frontend');
+});

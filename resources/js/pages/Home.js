@@ -7,16 +7,21 @@ function Home(props) {
     const categories = JSON.parse(
         document.getElementById("app").getAttribute("data-categories")
     );
+    const products = JSON.parse(
+        document.getElementById("app").getAttribute("data-products")
+    );
+    
+    console.log(products);
     console.log(categories);
-    for (let key in categories) {
-        console.log(categories[key]);
-    }
-    for (let category of categories) {
-        console.log(category);
-        for (let key in category) {
-            console.log(`${key}: ${category[key]}`);
-        }
-    }
+    // for (let key in categories) {
+    //     console.log(categories[key]);
+    // }
+    // for (let category of categories) {
+    //     console.log(category);
+    //     for (let key in category) {
+    //         console.log(`${key}: ${category[key]}`);
+    //     }
+    // }
     return (
         <>
             <WelcomeContainer />
@@ -28,7 +33,7 @@ function Home(props) {
                         </div>
                     </div>
                     <BestProductsContainer
-                        categories={categories}
+                        products={products}
                         img={
                             "https://cdn2.flowwow.com/data/blog/1562599250_29351868.jpg"
                         }

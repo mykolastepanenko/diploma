@@ -2145,14 +2145,19 @@ function BestProductsContainer(props) {
         className: "col",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_slick__WEBPACK_IMPORTED_MODULE_2__.default, _objectSpread(_objectSpread({}, settings2), {}, {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_ItemProduct__WEBPACK_IMPORTED_MODULE_1__.default, {
+            product: props.products[0],
             img: props.img
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_ItemProduct__WEBPACK_IMPORTED_MODULE_1__.default, {
+            product: props.products[1],
             img: props.img
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_ItemProduct__WEBPACK_IMPORTED_MODULE_1__.default, {
+            product: props.products[2],
             img: props.img
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_ItemProduct__WEBPACK_IMPORTED_MODULE_1__.default, {
+            product: props.products[3],
             img: props.img
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_ItemProduct__WEBPACK_IMPORTED_MODULE_1__.default, {
+            product: props.products[4],
             img: props.img
           })]
         }))
@@ -2321,25 +2326,30 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function ItemCard(props) {
+  console.log(props);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
     className: "card mx-auto mb-3 grayscale",
     style: {
       width: "14rem"
     },
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
-      src: props.img,
+      src: props.product.img,
       className: "card-img-top",
+      style: {
+        maxWidth: '222px',
+        maxHeight: '222px'
+      },
       alt: "..."
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
       className: "card-body",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h5", {
         className: "card-title",
-        children: "\u041D\u0430\u0437\u0432\u0430\u043D\u0438\u0435 \u043A\u0430\u0440\u0442\u043E\u0447\u043A\u0438"
+        children: props.product.name
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
         className: "card-text",
-        children: "Some quick example text to build on the card title and make up the bulk of the card's content."
+        children: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam quidem."
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
-        to: "/product",
+        to: "/product/".concat(props.product.id),
         className: "w-100 btn btn-primary stretched-link",
         children: "\u041F\u043E\u0434\u0440\u043E\u0431\u043D\u0435\u0435"
       })]
@@ -2496,6 +2506,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var app = document.getElementById("app");
 var categories = JSON.parse(app.getAttribute("data-categories"));
+var products = JSON.parse(app.getAttribute("data-products"));
 
 function FrontEnd() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.BrowserRouter, {
@@ -2507,8 +2518,10 @@ function FrontEnd() {
         path: "/register",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_pages_auth_Register__WEBPACK_IMPORTED_MODULE_8__.default, {})
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Route, {
-        path: "/product",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_pages_Product__WEBPACK_IMPORTED_MODULE_3__.default, {})
+        path: "/product/:id",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_pages_Product__WEBPACK_IMPORTED_MODULE_3__.default, {
+          products: products
+        })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Route, {
         path: "/category/:id",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_pages_Category__WEBPACK_IMPORTED_MODULE_4__.default, {
@@ -2611,12 +2624,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_BestProductsContainer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/BestProductsContainer */ "./resources/js/components/BestProductsContainer.js");
 /* harmony import */ var _components_BestCategoryContainer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/BestCategoryContainer */ "./resources/js/components/BestCategoryContainer.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
 
 
 
@@ -2627,29 +2634,17 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 function Home(props) {
   var categories = JSON.parse(document.getElementById("app").getAttribute("data-categories"));
-  console.log(categories);
-
-  for (var key in categories) {
-    console.log(categories[key]);
-  }
-
-  var _iterator = _createForOfIteratorHelper(categories),
-      _step;
-
-  try {
-    for (_iterator.s(); !(_step = _iterator.n()).done;) {
-      var category = _step.value;
-      console.log(category);
-
-      for (var _key in category) {
-        console.log("".concat(_key, ": ").concat(category[_key]));
-      }
-    }
-  } catch (err) {
-    _iterator.e(err);
-  } finally {
-    _iterator.f();
-  }
+  var products = JSON.parse(document.getElementById("app").getAttribute("data-products"));
+  console.log(products);
+  console.log(categories); // for (let key in categories) {
+  //     console.log(categories[key]);
+  // }
+  // for (let category of categories) {
+  //     console.log(category);
+  //     for (let key in category) {
+  //         console.log(`${key}: ${category[key]}`);
+  //     }
+  // }
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_WelcomeContainer__WEBPACK_IMPORTED_MODULE_1__.default, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
@@ -2665,7 +2660,7 @@ function Home(props) {
             })
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_BestProductsContainer__WEBPACK_IMPORTED_MODULE_2__.default, {
-          categories: categories,
+          products: products,
           img: "https://cdn2.flowwow.com/data/blog/1562599250_29351868.jpg"
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("section", {
@@ -2702,13 +2697,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 
 
 
+
 function Product(props) {
+  var product = props.products[(0,react_router_dom__WEBPACK_IMPORTED_MODULE_2__.useParams)().id - 1];
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
       className: "container d-flex align-items-center",
@@ -2721,17 +2719,21 @@ function Product(props) {
           className: "col col-md-4",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
             className: "w-100",
-            src: "https://cdn2.flowwow.com/data/blog/1562599250_29351868.jpg",
-            alt: ""
+            src: product.img,
+            alt: "",
+            style: {
+              maxWidth: '222px',
+              maxHeight: '222px'
+            }
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
           className: "col col-md-8",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
             className: "d-flex justify-content-between",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h1", {
-              children: "Flowers"
+              children: product.name
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h1", {
-              children: "4.99$"
+              children: product.price ? product.price : "500.00$"
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
             className: "text-justify",

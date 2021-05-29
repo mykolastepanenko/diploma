@@ -37,11 +37,11 @@ function BestProductsContainer(props) {
             <div className={"row"}>
                 <div className="col">
                     <Slider {...settings2}>
-                        <ItemProduct img={props.img} />
-                        <ItemProduct img={props.img} />
-                        <ItemProduct img={props.img} />
-                        <ItemProduct img={props.img} />
-                        <ItemProduct img={props.img} />
+                        <ItemProduct product={props.products[0]} img={props.img} />
+                        <ItemProduct product={props.products[1]} img={props.img} />
+                        <ItemProduct product={props.products[2]} img={props.img} />
+                        <ItemProduct product={props.products[3]} img={props.img} />
+                        <ItemProduct product={props.products[4]} img={props.img} />
                     </Slider>
                 </div>
             </div>

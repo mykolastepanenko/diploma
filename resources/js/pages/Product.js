@@ -1,6 +1,8 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 
 function Product(props) {
+    const product = props.products[useParams().id - 1];
     return (
         <>
             <div
@@ -11,14 +13,15 @@ function Product(props) {
                     <div className={"col col-md-4"}>
                         <img
                             className={"w-100"}
-                            src="https://cdn2.flowwow.com/data/blog/1562599250_29351868.jpg"
+                            src={product.img}
                             alt=""
+                            style={{maxWidth: '222px', maxHeight: '222px'}}
                         />
                     </div>
                     <div className={"col col-md-8"}>
                         <div className="d-flex justify-content-between">
-                            <h1>Flowers</h1>
-                            <h1>4.99$</h1>
+                            <h1>{product.name}</h1>
+                            <h1>{product.price ? product.price : "500.00$"}</h1>
                         </div>
                         <p className="text-justify">
                             Lorem ipsum dolor sit amet consectetur adipisicing

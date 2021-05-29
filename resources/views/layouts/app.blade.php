@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\DB;
 
 $categories = DB::select('select * from categories');
+$products = DB::select('select * from products');
 ?>
 
 <!doctype html>
@@ -29,7 +30,7 @@ $categories = DB::select('select * from categories');
 </head>
 
 <body>
-    <div id="app" data-categories="{{json_encode($categories)}}"></div>
+    <div id="app" data-categories="{{json_encode($categories)}}" data-products="{{json_encode($products)}}"></div>
 </body>
 
 </html>

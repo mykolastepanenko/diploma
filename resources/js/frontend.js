@@ -13,7 +13,7 @@ import Register from "./pages/auth/Register";
 
 const app = document.getElementById("app");
 const categories = JSON.parse(app.getAttribute("data-categories"));
-
+const products = JSON.parse(app.getAttribute("data-products"));
 function FrontEnd() {
     return (
         <Router>
@@ -25,8 +25,8 @@ function FrontEnd() {
                 <Route path="/register">
                     <Register />
                 </Route>
-                <Route path="/product">
-                    <Product />
+                <Route path="/product/:id">
+                    <Product products={products}/>
                 </Route>
                 <Route path="/category/:id">
                     <Category categories={categories} />
