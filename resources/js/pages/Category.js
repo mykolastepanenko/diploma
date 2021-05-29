@@ -1,10 +1,10 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import Catalog from "../components/Catalog";
 
 export default function (props) {
     const category = props.categories[useParams().id - 1];
-    console.log(`/category/${useParams().id}`);
-    console.log(category);
+    const seeds = JSON.parse(app.getAttribute("data-seeds"));
     return (
         <>
             <div
@@ -13,11 +13,7 @@ export default function (props) {
             >
                 <div className="row align-items-center">
                     <div className={"col col-md-4"}>
-                        <img
-                            className={"w-100"}
-                            src={category.img}
-                            alt=""
-                        />
+                        <img className={"w-100"} src={category.img} alt="" />
                     </div>
                     <div className={"col col-md-8"}>
                         <div className="d-flex justify-content-between">
@@ -35,6 +31,35 @@ export default function (props) {
                             Add to cart
                         </button>
                     </div>
+                </div>
+            </div>
+
+            <div className="container">
+                <div className="catalog d-flex flex-wrap justify-content-between">
+                    {useParams().id === "1" && (
+                        <>
+                            <Catalog item={seeds[0]} />
+                            <Catalog item={seeds[1]} />
+                            <Catalog item={seeds[2]} />
+                            <Catalog item={seeds[3]} />
+                            <Catalog item={seeds[4]} />
+                            <Catalog item={seeds[0]} />
+                            <Catalog item={seeds[1]} />
+                            <Catalog item={seeds[2]} />
+                            <Catalog item={seeds[3]} />
+                            <Catalog item={seeds[4]} />
+                            <Catalog item={seeds[0]} />
+                            <Catalog item={seeds[1]} />
+                            <Catalog item={seeds[2]} />
+                            <Catalog item={seeds[3]} />
+                            <Catalog item={seeds[4]} />
+                            <Catalog item={seeds[0]} />
+                            <Catalog item={seeds[1]} />
+                            <Catalog item={seeds[2]} />
+                            <Catalog item={seeds[3]} />
+                            <Catalog item={seeds[4]} />
+                        </>
+                    )}
                 </div>
             </div>
         </>

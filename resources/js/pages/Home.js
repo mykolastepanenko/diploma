@@ -2,6 +2,7 @@ import React from "react";
 import WelcomeContainer from "../components/WelcomeContainer";
 import BestProductsContainer from "../components/BestProductsContainer";
 import BestCategoryContainer from "../components/BestCategoryContainer";
+import Catalog from "../components/Catalog";
 
 function Home(props) {
     const categories = JSON.parse(
@@ -10,7 +11,10 @@ function Home(props) {
     const products = JSON.parse(
         document.getElementById("app").getAttribute("data-products")
     );
-    
+    const seeds = JSON.parse(
+        document.getElementById("app").getAttribute("data-seeds")
+    );
+
     console.log(products);
     console.log(categories);
     // for (let key in categories) {
@@ -29,7 +33,9 @@ function Home(props) {
                 <section>
                     <div className="row">
                         <div className="col">
-                            <h2 className={"text-capitalize"}>Найкращі продукти</h2>
+                            <h2 className={"text-capitalize"}>
+                                Найкращі продукти
+                            </h2>
                         </div>
                     </div>
                     <BestProductsContainer
@@ -46,6 +52,33 @@ function Home(props) {
                         </div>
                     </div>
                     <BestCategoryContainer categories={categories} />
+                </section>
+                <section>
+                    <h2 className="text-capitalize">Товар</h2>
+                    <div className="container">
+                        <div className="catalog d-flex flex-wrap justify-content-between">
+                            <Catalog item={seeds[0]} />
+                            <Catalog item={seeds[1]} />
+                            <Catalog item={seeds[2]} />
+                            <Catalog item={seeds[3]} />
+                            <Catalog item={seeds[4]} />
+                            <Catalog item={seeds[0]} />
+                            <Catalog item={seeds[1]} />
+                            <Catalog item={seeds[2]} />
+                            <Catalog item={seeds[3]} />
+                            <Catalog item={seeds[4]} />
+                            <Catalog item={seeds[0]} />
+                            <Catalog item={seeds[1]} />
+                            <Catalog item={seeds[2]} />
+                            <Catalog item={seeds[3]} />
+                            <Catalog item={seeds[4]} />
+                            <Catalog item={seeds[0]} />
+                            <Catalog item={seeds[1]} />
+                            <Catalog item={seeds[2]} />
+                            <Catalog item={seeds[3]} />
+                            <Catalog item={seeds[4]} />
+                        </div>
+                    </div>
                 </section>
             </div>
         </>

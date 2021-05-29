@@ -74,11 +74,11 @@ class ProductSeeder extends Seeder
         ];
 
         $category = [
-            "vegetables",
-            "vegetables",
-            "vegetables",
-            "vegetables",
-            "vegetables"
+            "seeds",
+            "seeds",
+            "seeds",
+            "seeds",
+            "seeds"
         ];
 
         $categories = [];

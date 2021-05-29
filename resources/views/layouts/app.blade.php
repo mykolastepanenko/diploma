@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\DB;
 
 $categories = DB::select('select * from categories');
 $products = DB::select('select * from products');
+
+$seeds = DB::select('select * from products where category = "seeds"')
 ?>
 
 <!doctype html>
@@ -30,7 +32,8 @@ $products = DB::select('select * from products');
 </head>
 
 <body>
-    <div id="app" data-categories="{{json_encode($categories)}}" data-products="{{json_encode($products)}}"></div>
+    <div id="app" data-categories="{{json_encode($categories)}}" data-products="{{json_encode($products)}}" data-seeds="{{json_encode($seeds)}}">
+    </div>
 </body>
 
 </html>
