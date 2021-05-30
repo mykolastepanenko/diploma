@@ -9,7 +9,7 @@ export default function Footer() {
                 className="w-100 bg-dark text-white d-flex justify-content-center align-items-center"
                 style={{ height: "75px" }}
             >
-                Все права защищены. {date.getFullYear()} &copy;
+                Усі права захищені {date.getFullYear()} &copy;
             </footer>
         </>
     );

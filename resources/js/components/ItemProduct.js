@@ -21,7 +21,7 @@ function ItemCard(props) {
                     to={`/product/${props.product.id}`}
                     className="w-100 btn btn-primary stretched-link"
                 >
-                    Подробнее
+                    Детальніше
                 </Link>
             </div>
         </div>

@@ -53,34 +53,112 @@ function Home(props) {
                     </div>
                     <BestCategoryContainer categories={categories} />
                 </section>
-                <section>
-                    <h2 className="text-capitalize">Товар</h2>
-                    <div className="container">
-                        <div className="catalog d-flex flex-wrap justify-content-between">
-                            <Catalog item={seeds[0]} />
-                            <Catalog item={seeds[1]} />
-                            <Catalog item={seeds[2]} />
-                            <Catalog item={seeds[3]} />
-                            <Catalog item={seeds[4]} />
-                            <Catalog item={seeds[0]} />
-                            <Catalog item={seeds[1]} />
-                            <Catalog item={seeds[2]} />
-                            <Catalog item={seeds[3]} />
-                            <Catalog item={seeds[4]} />
-                            <Catalog item={seeds[0]} />
-                            <Catalog item={seeds[1]} />
-                            <Catalog item={seeds[2]} />
-                            <Catalog item={seeds[3]} />
-                            <Catalog item={seeds[4]} />
-                            <Catalog item={seeds[0]} />
-                            <Catalog item={seeds[1]} />
-                            <Catalog item={seeds[2]} />
-                            <Catalog item={seeds[3]} />
-                            <Catalog item={seeds[4]} />
-                        </div>
-                    </div>
-                </section>
             </div>
+
+            <section className="bg-white">
+                <div className="container">
+                    <h2 className="text-capitalize py-5">Товар</h2>
+                    <div className="container">
+                        {/* <div className="catalog d-flex flex-wrap justify-content-between">
+                            <Catalog item={seeds[0]} />
+                            <Catalog item={seeds[1]} />
+                            <Catalog item={seeds[2]} />
+                            <Catalog item={seeds[3]} />
+                            <Catalog item={seeds[4]} />
+                            <Catalog item={seeds[0]} />
+                            <Catalog item={seeds[1]} />
+                            <Catalog item={seeds[2]} />
+                            <Catalog item={seeds[3]} />
+                            <Catalog item={seeds[4]} />
+                            <Catalog item={seeds[0]} />
+                            <Catalog item={seeds[1]} />
+                            <Catalog item={seeds[2]} />
+                            <Catalog item={seeds[3]} />
+                            <Catalog item={seeds[4]} />
+                            <Catalog item={seeds[0]} />
+                            <Catalog item={seeds[1]} />
+                            <Catalog item={seeds[2]} />
+                            <Catalog item={seeds[3]} />
+                            <Catalog item={seeds[4]} />
+                        </div> */}
+
+                        <div
+                            id="carouselExampleFade"
+                            className="carousel slide carousel-fade"
+                            data-ride="carousel"
+                        >
+                            <div className="carousel-inner">
+                                <div className="carousel-item active">
+                                    <div className="catalog d-flex flex-wrap justify-content-between">
+                                        <Catalog item={seeds[0]} />
+                                        <Catalog item={seeds[1]} />
+                                        <Catalog item={seeds[2]} />
+                                        <Catalog item={seeds[3]} />
+                                        <Catalog item={seeds[4]} />
+                                        <Catalog item={seeds[0]} />
+                                        <Catalog item={seeds[1]} />
+                                        <Catalog item={seeds[2]} />
+                                        <Catalog item={seeds[3]} />
+                                        <Catalog item={seeds[4]} />
+                                        <Catalog item={seeds[0]} />
+                                        <Catalog item={seeds[1]} />
+                                        <Catalog item={seeds[2]} />
+                                        <Catalog item={seeds[3]} />
+                                        <Catalog item={seeds[4]} />
+                                        <Catalog item={seeds[0]} />
+                                        <Catalog item={seeds[1]} />
+                                        <Catalog item={seeds[2]} />
+                                        <Catalog item={seeds[3]} />
+                                        <Catalog item={seeds[4]} />
+                                    </div>
+                                </div>
+                                <div className="carousel-item"></div>
+                                <div className="carousel-item"></div>
+                            </div>
+                        </div>
+
+                        <nav aria-label="Page navigation example" className="w-100 d-block mx-auto">
+                            <ul className="pagination justify-content-center">
+                                <li className="page-item">
+                                    <a
+                                        className="page-link"
+                                        href="#carouselExampleFade"
+                                        role="button"
+                                        data-slide="prev"
+                                    >
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                                <li className="page-item">
+                                    <a className="page-link" href="#">
+                                        1
+                                    </a>
+                                </li>
+                                <li className="page-item">
+                                    <a className="page-link" href="#">
+                                        2
+                                    </a>
+                                </li>
+                                <li className="page-item">
+                                    <a className="page-link" href="#">
+                                        3
+                                    </a>
+                                </li>
+                                <li className="page-item">
+                                    <a
+                                        className="page-link"
+                                        href="#carouselExampleFade"
+                                        role="button"
+                                        data-slide="next"
+                                    >
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </section>
         </>
     );
 }

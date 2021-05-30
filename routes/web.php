@@ -17,46 +17,50 @@ Route::get('/', function () {
     return view('pages.frontend');
 });
 
-Route::get('/product', function(){
+Route::get('/cart', function () {
     return view('pages.frontend');
 });
 
-Route::get('/product/1', function(){
+Route::get('/product', function () {
     return view('pages.frontend');
 });
 
-Route::get('/product/1', function(){
-    return view('pages.frontend');
-});
-Route::get('/product/2', function(){
-    return view('pages.frontend');
-});
-Route::get('/product/3', function(){
-    return view('pages.frontend');
-});
-Route::get('/product/4', function(){
-    return view('pages.frontend');
-});
-Route::get('/product/5', function(){
+Route::get('/product/1', function () {
     return view('pages.frontend');
 });
 
-Route::get('category/1', function(){
+Route::get('/product/1', function () {
+    return view('pages.frontend');
+});
+Route::get('/product/2', function () {
+    return view('pages.frontend');
+});
+Route::get('/product/3', function () {
+    return view('pages.frontend');
+});
+Route::get('/product/4', function () {
+    return view('pages.frontend');
+});
+Route::get('/product/5', function () {
     return view('pages.frontend');
 });
 
-Route::get('category/2', function(){
+Route::get('category/1', function () {
     return view('pages.frontend');
 });
 
-Route::get('category/3', function(){
+Route::get('category/2', function () {
     return view('pages.frontend');
 });
 
-Route::get('category/4', function(){
+Route::get('category/3', function () {
     return view('pages.frontend');
 });
 
-Route::get('category/5', function(){
+Route::get('category/4', function () {
+    return view('pages.frontend');
+});
+
+Route::get('category/5', function () {
     return view('pages.frontend');
 });

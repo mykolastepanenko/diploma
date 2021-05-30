@@ -24,7 +24,7 @@ export default function Catalog(props) {
                             to={`/product/${props.item.id}`}
                             className="w-100 btn btn-primary stretched-link"
                         >
-                            Подробнее
+                            Детальніше
                         </Link>
                     </div>
                 </div>

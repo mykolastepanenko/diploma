@@ -7,7 +7,7 @@ export default function (props) {
     const seeds = JSON.parse(app.getAttribute("data-seeds"));
     return (
         <>
-            <div
+            {/* <div
                 className="container d-flex align-items-center"
                 style={{ minHeight: "100vh" }}
             >
@@ -32,9 +32,10 @@ export default function (props) {
                         </button>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
-            <div className="container">
+            <div className="container" style={{ paddingTop: "100px" }}>
+                <h1>Категорія: {category.name}</h1>
                 <div className="catalog d-flex flex-wrap justify-content-between">
                     {useParams().id === "1" && (
                         <>

@@ -15,7 +15,7 @@ function Product(props) {
                             className={"w-100"}
                             src={product.img}
                             alt=""
-                            style={{maxWidth: '222px', maxHeight: '222px'}}
+                            style={{ maxWidth: "222px", maxHeight: "222px" }}
                         />
                     </div>
                     <div className={"col col-md-8"}>
@@ -30,8 +30,14 @@ function Product(props) {
                             amet, possimus cumque dignissimos unde sint!
                             Debitis, adipisci at.
                         </p>
-                        <button type="button" className="btn btn-success">
-                            Add to cart
+                        <button
+                            type="button"
+                            className="btn btn-success"
+                            onClick={() => {
+                                props.addToCart(product);
+                            }}
+                        >
+                            В корзину
                         </button>
                     </div>
                 </div>

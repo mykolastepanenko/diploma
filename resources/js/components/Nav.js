@@ -32,6 +32,14 @@ function Nav() {
                         <li className="nav-item">
                             <Link
                                 className="nav-link text-white-hover"
+                                to="/cart"
+                            >
+                                Корзина
+                            </Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link
+                                className="nav-link text-white-hover"
                                 to="/login"
                             >
                                 Увійти
