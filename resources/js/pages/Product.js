@@ -15,14 +15,15 @@ function Product(props) {
                             className={"w-100"}
                             src={product.img}
                             alt=""
-                            style={{ maxWidth: "222px", maxHeight: "222px" }}
+                            style={{ width: "222px", height: "222px" }}
                         />
                     </div>
                     <div className={"col col-md-8"}>
                         <div className="d-flex justify-content-between">
                             <h1>{product.name}</h1>
-                            <h1>{product.price ? product.price : "500.00$"}</h1>
+                            <h1>{product.price ? product.price + " грн" : "500.00$"}</h1>
                         </div>
+                        <h4>В наявності: {product.count}</h4>
                         <p className="text-justify">
                             Lorem ipsum dolor sit amet consectetur adipisicing
                             elit. Recusandae labore nam provident eos numquam

@@ -8,7 +8,7 @@ function ItemCard(props) {
             <img
                 src={props.product.img}
                 className="card-img-top"
-                style={{maxWidth: '222px', maxHeight: '222px'}}
+                style={{width: '222px', height: '222px'}}
                 alt="..."
             />
             <div className="card-body">

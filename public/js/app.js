@@ -2200,8 +2200,8 @@ function Catalog(props) {
         src: props.item.img,
         className: "card-img-top",
         style: {
-          maxWidth: "222px",
-          maxHeight: "222px"
+          width: "222px",
+          height: "222px"
         },
         alt: "..."
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
@@ -2390,8 +2390,8 @@ function ItemCard(props) {
       src: props.product.img,
       className: "card-img-top",
       style: {
-        maxWidth: '222px',
-        maxHeight: '222px'
+        width: '222px',
+        height: '222px'
       },
       alt: "..."
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
@@ -2747,6 +2747,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__(props) {
   var category = props.categories[(0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useParams)().id - 1];
   var seeds = JSON.parse(app.getAttribute("data-seeds"));
+  var planes = JSON.parse(app.getAttribute("data-planes"));
+  var inventory = JSON.parse(app.getAttribute("data-inventory"));
+  var fertilizer = JSON.parse(app.getAttribute("data-fertilizers"));
+  var food = JSON.parse(app.getAttribute("data-food"));
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
       className: "container",
@@ -2755,9 +2759,9 @@ __webpack_require__.r(__webpack_exports__);
       },
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("h1", {
         children: ["\u041A\u0430\u0442\u0435\u0433\u043E\u0440\u0456\u044F: ", category.name]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
         className: "catalog d-flex flex-wrap justify-content-between",
-        children: (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useParams)().id === "1" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+        children: [(0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useParams)().id === "1" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
             item: seeds[0]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
@@ -2799,7 +2803,175 @@ __webpack_require__.r(__webpack_exports__);
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
             item: seeds[4]
           })]
-        })
+        }), (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useParams)().id === "2" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: planes[0]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: planes[1]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: planes[2]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: planes[3]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: planes[4]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: planes[0]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: planes[1]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: planes[2]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: planes[3]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: planes[4]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: planes[0]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: planes[1]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: planes[2]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: planes[3]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: planes[4]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: planes[0]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: planes[1]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: planes[2]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: planes[3]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: planes[4]
+          })]
+        }), (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useParams)().id === "3" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: fertilizer[0]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: fertilizer[1]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: fertilizer[2]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: fertilizer[3]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: fertilizer[4]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: fertilizer[0]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: fertilizer[1]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: fertilizer[2]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: fertilizer[3]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: fertilizer[4]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: fertilizer[0]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: fertilizer[1]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: fertilizer[2]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: fertilizer[3]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: fertilizer[4]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: fertilizer[0]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: fertilizer[1]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: fertilizer[2]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: fertilizer[3]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: fertilizer[4]
+          })]
+        }), (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useParams)().id === "4" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: inventory[0]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: inventory[1]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: inventory[2]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: inventory[3]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: inventory[4]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: inventory[0]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: inventory[1]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: inventory[2]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: inventory[3]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: inventory[4]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: inventory[0]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: inventory[1]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: inventory[2]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: inventory[3]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: inventory[4]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: inventory[0]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: inventory[1]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: inventory[2]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: inventory[3]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: inventory[4]
+          })]
+        }), (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useParams)().id === "5" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: food[0]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: food[1]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: food[2]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: food[3]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: food[4]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: food[0]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: food[1]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: food[2]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: food[3]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: food[4]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: food[0]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: food[1]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: food[2]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: food[3]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: food[4]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: food[0]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: food[1]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: food[2]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: food[3]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_1__.default, {
+            item: food[4]
+          })]
+        })]
       })]
     })
   });
@@ -2837,6 +3009,10 @@ function Home(props) {
   var categories = JSON.parse(document.getElementById("app").getAttribute("data-categories"));
   var products = JSON.parse(document.getElementById("app").getAttribute("data-products"));
   var seeds = JSON.parse(document.getElementById("app").getAttribute("data-seeds"));
+  var planes = JSON.parse(document.getElementById("app").getAttribute("data-planes"));
+  var fertilizers = JSON.parse(document.getElementById("app").getAttribute("data-fertilizers"));
+  var inventory = JSON.parse(document.getElementById("app").getAttribute("data-inventory"));
+  var food = JSON.parse(document.getElementById("app").getAttribute("data-food"));
   console.log(products);
   console.log(categories); // for (let key in categories) {
   //     console.log(categories[key]);
@@ -2941,9 +3117,189 @@ function Home(props) {
                   })]
                 })
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-                className: "carousel-item"
+                className: "carousel-item",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+                  className: "catalog d-flex flex-wrap justify-content-between",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: planes[0]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: planes[1]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: planes[2]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: planes[3]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: planes[4]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: planes[0]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: planes[1]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: planes[2]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: planes[3]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: planes[4]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: planes[0]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: planes[1]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: planes[2]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: planes[3]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: planes[4]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: planes[0]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: planes[1]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: planes[2]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: planes[3]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: planes[4]
+                  })]
+                })
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-                className: "carousel-item"
+                className: "carousel-item",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+                  className: "catalog d-flex flex-wrap justify-content-between",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: fertilizers[0]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: fertilizers[1]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: fertilizers[2]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: fertilizers[3]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: fertilizers[4]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: fertilizers[0]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: fertilizers[1]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: fertilizers[2]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: fertilizers[3]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: fertilizers[4]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: fertilizers[0]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: fertilizers[1]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: fertilizers[2]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: fertilizers[3]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: fertilizers[4]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: fertilizers[0]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: fertilizers[1]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: fertilizers[2]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: fertilizers[3]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: fertilizers[4]
+                  })]
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+                className: "carousel-item",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+                  className: "catalog d-flex flex-wrap justify-content-between",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: inventory[0]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: inventory[1]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: inventory[2]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: inventory[3]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: inventory[4]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: inventory[0]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: inventory[1]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: inventory[2]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: inventory[3]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: inventory[4]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: inventory[0]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: inventory[1]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: inventory[2]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: inventory[3]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: inventory[4]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: inventory[0]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: inventory[1]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: inventory[2]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: inventory[3]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: inventory[4]
+                  })]
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+                className: "carousel-item",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+                  className: "catalog d-flex flex-wrap justify-content-between",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: food[0]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: food[1]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: food[2]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: food[3]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: food[4]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: food[0]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: food[1]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: food[2]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: food[3]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: food[4]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: food[0]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: food[1]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: food[2]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: food[3]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: food[4]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: food[0]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: food[1]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: food[2]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: food[3]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Catalog__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    item: food[4]
+                  })]
+                })
               })]
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("nav", {
@@ -2965,24 +3321,43 @@ function Home(props) {
                 })
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
                 className: "page-item",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
+                  "data-target": "#carouselExampleFade",
+                  "data-slide-to": "0",
                   className: "page-link",
-                  href: "#",
                   children: "1"
                 })
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
                 className: "page-item",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
+                  "data-target": "#carouselExampleFade",
+                  "data-slide-to": "1",
                   className: "page-link",
-                  href: "#",
                   children: "2"
                 })
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
                 className: "page-item",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
+                  "data-target": "#carouselExampleFade",
+                  "data-slide-to": "2",
                   className: "page-link",
-                  href: "#",
                   children: "3"
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
+                className: "page-item",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
+                  "data-target": "#carouselExampleFade",
+                  "data-slide-to": "3",
+                  className: "page-link",
+                  children: "4"
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
+                className: "page-item",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
+                  "data-target": "#carouselExampleFade",
+                  "data-slide-to": "4",
+                  className: "page-link",
+                  children: "5"
                 })
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
                 className: "page-item",
@@ -3046,8 +3421,8 @@ function Product(props) {
             src: product.img,
             alt: "",
             style: {
-              maxWidth: "222px",
-              maxHeight: "222px"
+              width: "222px",
+              height: "222px"
             }
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
@@ -3057,8 +3432,10 @@ function Product(props) {
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h1", {
               children: product.name
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h1", {
-              children: product.price ? product.price : "500.00$"
+              children: product.price ? product.price + " грн" : "500.00$"
             })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("h4", {
+            children: ["\u0412 \u043D\u0430\u044F\u0432\u043D\u043E\u0441\u0442\u0456: ", product.count]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
             className: "text-justify",
             children: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae labore nam provident eos numquam accusantium eligendi architecto, odio enim, vero a amet, possimus cumque dignissimos unde sint! Debitis, adipisci at."

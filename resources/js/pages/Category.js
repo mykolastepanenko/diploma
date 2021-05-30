@@ -5,6 +5,11 @@ import Catalog from "../components/Catalog";
 export default function (props) {
     const category = props.categories[useParams().id - 1];
     const seeds = JSON.parse(app.getAttribute("data-seeds"));
+    const planes = JSON.parse(app.getAttribute("data-planes"));
+    const inventory = JSON.parse(app.getAttribute("data-inventory"));
+    const fertilizer = JSON.parse(app.getAttribute("data-fertilizers"));
+    const food = JSON.parse(app.getAttribute("data-food"));
+
     return (
         <>
             {/* <div
@@ -59,6 +64,104 @@ export default function (props) {
                             <Catalog item={seeds[2]} />
                             <Catalog item={seeds[3]} />
                             <Catalog item={seeds[4]} />
+                        </>
+                    )}
+                    {useParams().id === "2" && (
+                        <>
+                            <Catalog item={planes[0]} />
+                            <Catalog item={planes[1]} />
+                            <Catalog item={planes[2]} />
+                            <Catalog item={planes[3]} />
+                            <Catalog item={planes[4]} />
+                            <Catalog item={planes[0]} />
+                            <Catalog item={planes[1]} />
+                            <Catalog item={planes[2]} />
+                            <Catalog item={planes[3]} />
+                            <Catalog item={planes[4]} />
+                            <Catalog item={planes[0]} />
+                            <Catalog item={planes[1]} />
+                            <Catalog item={planes[2]} />
+                            <Catalog item={planes[3]} />
+                            <Catalog item={planes[4]} />
+                            <Catalog item={planes[0]} />
+                            <Catalog item={planes[1]} />
+                            <Catalog item={planes[2]} />
+                            <Catalog item={planes[3]} />
+                            <Catalog item={planes[4]} />
+                        </>
+                    )}
+
+                    {useParams().id === "3" && (
+                        <>
+                            <Catalog item={fertilizer[0]} />
+                            <Catalog item={fertilizer[1]} />
+                            <Catalog item={fertilizer[2]} />
+                            <Catalog item={fertilizer[3]} />
+                            <Catalog item={fertilizer[4]} />
+                            <Catalog item={fertilizer[0]} />
+                            <Catalog item={fertilizer[1]} />
+                            <Catalog item={fertilizer[2]} />
+                            <Catalog item={fertilizer[3]} />
+                            <Catalog item={fertilizer[4]} />
+                            <Catalog item={fertilizer[0]} />
+                            <Catalog item={fertilizer[1]} />
+                            <Catalog item={fertilizer[2]} />
+                            <Catalog item={fertilizer[3]} />
+                            <Catalog item={fertilizer[4]} />
+                            <Catalog item={fertilizer[0]} />
+                            <Catalog item={fertilizer[1]} />
+                            <Catalog item={fertilizer[2]} />
+                            <Catalog item={fertilizer[3]} />
+                            <Catalog item={fertilizer[4]} />
+                        </>
+                    )}
+                    {useParams().id === "4" && (
+                        <>
+                            <Catalog item={inventory[0]} />
+                            <Catalog item={inventory[1]} />
+                            <Catalog item={inventory[2]} />
+                            <Catalog item={inventory[3]} />
+                            <Catalog item={inventory[4]} />
+                            <Catalog item={inventory[0]} />
+                            <Catalog item={inventory[1]} />
+                            <Catalog item={inventory[2]} />
+                            <Catalog item={inventory[3]} />
+                            <Catalog item={inventory[4]} />
+                            <Catalog item={inventory[0]} />
+                            <Catalog item={inventory[1]} />
+                            <Catalog item={inventory[2]} />
+                            <Catalog item={inventory[3]} />
+                            <Catalog item={inventory[4]} />
+                            <Catalog item={inventory[0]} />
+                            <Catalog item={inventory[1]} />
+                            <Catalog item={inventory[2]} />
+                            <Catalog item={inventory[3]} />
+                            <Catalog item={inventory[4]} />
+                        </>
+                    )}
+
+                    {useParams().id === "5" && (
+                        <>
+                            <Catalog item={food[0]} />
+                            <Catalog item={food[1]} />
+                            <Catalog item={food[2]} />
+                            <Catalog item={food[3]} />
+                            <Catalog item={food[4]} />
+                            <Catalog item={food[0]} />
+                            <Catalog item={food[1]} />
+                            <Catalog item={food[2]} />
+                            <Catalog item={food[3]} />
+                            <Catalog item={food[4]} />
+                            <Catalog item={food[0]} />
+                            <Catalog item={food[1]} />
+                            <Catalog item={food[2]} />
+                            <Catalog item={food[3]} />
+                            <Catalog item={food[4]} />
+                            <Catalog item={food[0]} />
+                            <Catalog item={food[1]} />
+                            <Catalog item={food[2]} />
+                            <Catalog item={food[3]} />
+                            <Catalog item={food[4]} />
                         </>
                     )}
                 </div>

@@ -14,6 +14,18 @@ function Home(props) {
     const seeds = JSON.parse(
         document.getElementById("app").getAttribute("data-seeds")
     );
+    const planes = JSON.parse(
+        document.getElementById("app").getAttribute("data-planes")
+    );
+    const fertilizers = JSON.parse(
+        document.getElementById("app").getAttribute("data-fertilizers")
+    );
+    const inventory = JSON.parse(
+        document.getElementById("app").getAttribute("data-inventory")
+    );
+    const food = JSON.parse(
+        document.getElementById("app").getAttribute("data-food")
+    );
 
     console.log(products);
     console.log(categories);
@@ -112,12 +124,109 @@ function Home(props) {
                                         <Catalog item={seeds[4]} />
                                     </div>
                                 </div>
-                                <div className="carousel-item"></div>
-                                <div className="carousel-item"></div>
+                                <div className="carousel-item">
+                                    <div className="catalog d-flex flex-wrap justify-content-between">
+                                        <Catalog item={planes[0]} />
+                                        <Catalog item={planes[1]} />
+                                        <Catalog item={planes[2]} />
+                                        <Catalog item={planes[3]} />
+                                        <Catalog item={planes[4]} />
+                                        <Catalog item={planes[0]} />
+                                        <Catalog item={planes[1]} />
+                                        <Catalog item={planes[2]} />
+                                        <Catalog item={planes[3]} />
+                                        <Catalog item={planes[4]} />
+                                        <Catalog item={planes[0]} />
+                                        <Catalog item={planes[1]} />
+                                        <Catalog item={planes[2]} />
+                                        <Catalog item={planes[3]} />
+                                        <Catalog item={planes[4]} />
+                                        <Catalog item={planes[0]} />
+                                        <Catalog item={planes[1]} />
+                                        <Catalog item={planes[2]} />
+                                        <Catalog item={planes[3]} />
+                                        <Catalog item={planes[4]} />
+                                    </div>
+                                </div>
+                                <div className="carousel-item">
+                                    <div className="catalog d-flex flex-wrap justify-content-between">
+                                        <Catalog item={fertilizers[0]} />
+                                        <Catalog item={fertilizers[1]} />
+                                        <Catalog item={fertilizers[2]} />
+                                        <Catalog item={fertilizers[3]} />
+                                        <Catalog item={fertilizers[4]} />
+                                        <Catalog item={fertilizers[0]} />
+                                        <Catalog item={fertilizers[1]} />
+                                        <Catalog item={fertilizers[2]} />
+                                        <Catalog item={fertilizers[3]} />
+                                        <Catalog item={fertilizers[4]} />
+                                        <Catalog item={fertilizers[0]} />
+                                        <Catalog item={fertilizers[1]} />
+                                        <Catalog item={fertilizers[2]} />
+                                        <Catalog item={fertilizers[3]} />
+                                        <Catalog item={fertilizers[4]} />
+                                        <Catalog item={fertilizers[0]} />
+                                        <Catalog item={fertilizers[1]} />
+                                        <Catalog item={fertilizers[2]} />
+                                        <Catalog item={fertilizers[3]} />
+                                        <Catalog item={fertilizers[4]} />
+                                    </div>
+                                </div>
+                                <div className="carousel-item">
+                                    <div className="catalog d-flex flex-wrap justify-content-between">
+                                        <Catalog item={inventory[0]} />
+                                        <Catalog item={inventory[1]} />
+                                        <Catalog item={inventory[2]} />
+                                        <Catalog item={inventory[3]} />
+                                        <Catalog item={inventory[4]} />
+                                        <Catalog item={inventory[0]} />
+                                        <Catalog item={inventory[1]} />
+                                        <Catalog item={inventory[2]} />
+                                        <Catalog item={inventory[3]} />
+                                        <Catalog item={inventory[4]} />
+                                        <Catalog item={inventory[0]} />
+                                        <Catalog item={inventory[1]} />
+                                        <Catalog item={inventory[2]} />
+                                        <Catalog item={inventory[3]} />
+                                        <Catalog item={inventory[4]} />
+                                        <Catalog item={inventory[0]} />
+                                        <Catalog item={inventory[1]} />
+                                        <Catalog item={inventory[2]} />
+                                        <Catalog item={inventory[3]} />
+                                        <Catalog item={inventory[4]} />
+                                    </div>
+                                </div>
+                                <div className="carousel-item">
+                                    <div className="catalog d-flex flex-wrap justify-content-between">
+                                        <Catalog item={food[0]} />
+                                        <Catalog item={food[1]} />
+                                        <Catalog item={food[2]} />
+                                        <Catalog item={food[3]} />
+                                        <Catalog item={food[4]} />
+                                        <Catalog item={food[0]} />
+                                        <Catalog item={food[1]} />
+                                        <Catalog item={food[2]} />
+                                        <Catalog item={food[3]} />
+                                        <Catalog item={food[4]} />
+                                        <Catalog item={food[0]} />
+                                        <Catalog item={food[1]} />
+                                        <Catalog item={food[2]} />
+                                        <Catalog item={food[3]} />
+                                        <Catalog item={food[4]} />
+                                        <Catalog item={food[0]} />
+                                        <Catalog item={food[1]} />
+                                        <Catalog item={food[2]} />
+                                        <Catalog item={food[3]} />
+                                        <Catalog item={food[4]} />
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
-                        <nav aria-label="Page navigation example" className="w-100 d-block mx-auto">
+                        <nav
+                            aria-label="Page navigation example"
+                            className="w-100 d-block mx-auto"
+                        >
                             <ul className="pagination justify-content-center">
                                 <li className="page-item">
                                     <a
@@ -130,19 +239,49 @@ function Home(props) {
                                     </a>
                                 </li>
                                 <li className="page-item">
-                                    <a className="page-link" href="#">
+                                    <li
+                                        data-target="#carouselExampleFade"
+                                        data-slide-to="0"
+                                        className="page-link"
+                                    >
                                         1
-                                    </a>
+                                    </li>
                                 </li>
                                 <li className="page-item">
-                                    <a className="page-link" href="#">
+                                    <li
+                                        data-target="#carouselExampleFade"
+                                        data-slide-to="1"
+                                        className="page-link"
+                                    >
                                         2
-                                    </a>
+                                    </li>
                                 </li>
                                 <li className="page-item">
-                                    <a className="page-link" href="#">
+                                    <li
+                                        data-target="#carouselExampleFade"
+                                        data-slide-to="2"
+                                        className="page-link"
+                                    >
                                         3
-                                    </a>
+                                    </li>
+                                </li>
+                                <li className="page-item">
+                                    <li
+                                        data-target="#carouselExampleFade"
+                                        data-slide-to="3"
+                                        className="page-link"
+                                    >
+                                        4
+                                    </li>
+                                </li>
+                                <li className="page-item">
+                                    <li
+                                        data-target="#carouselExampleFade"
+                                        data-slide-to="4"
+                                        className="page-link"
+                                    >
+                                        5
+                                    </li>
                                 </li>
                                 <li className="page-item">
                                     <a
