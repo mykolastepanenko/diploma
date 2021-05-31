@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Nav() {
+function Nav(props) {
     return (
         <nav className="navbar navbar-expand-md navbar-dark bg-dark shadow-sm position-absolute w-100">
             <div className="container">
@@ -38,20 +38,35 @@ function Nav() {
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link
-                                className="nav-link text-white-hover"
-                                to="/login"
-                            >
-                                Увійти
-                            </Link>
+                            {props.hasOwnProperty("user") ? (
+                                <a className="nav-link text-white-hover">
+                                    {props.user.name}
+                                </a>
+                            ) : (
+                                <a
+                                    className="nav-link text-white-hover"
+                                    href="/login"
+                                >
+                                    Увійти
+                                </a>
+                            )}
                         </li>
                         <li className="nav-item">
-                            <Link
-                                className="nav-link text-white-hover"
-                                to="/register"
-                            >
-                                Реєстрація
-                            </Link>
+                            {props.hasOwnProperty("user") ? (
+                                <a
+                                    className="nav-link text-white-hover"
+                                    href="/logout"
+                                >
+                                    Вийти
+                                </a>
+                            ) : (
+                                <a
+                                    className="nav-link text-white-hover"
+                                    href="/register"
+                                >
+                                    Реєстрація
+                                </a>
+                            )}
                         </li>
                     </ul>
                 </div>

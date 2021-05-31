@@ -36,6 +36,9 @@ $food = DB::select('select * from products where category = "food"');
 </head>
 
 <body>
+    @yield('content')
+
+    @guest
     <div 
         id="app" 
         data-categories="{{json_encode($categories)}}" 
@@ -46,7 +49,25 @@ $food = DB::select('select * from products where category = "food"');
         data-inventory="{{json_encode($inventory)}}"
         data-food="{{json_encode($food)}}"
     >
+    @else
+    <div 
+        id="app" 
+        data-categories="{{json_encode($categories)}}" 
+        data-products="{{json_encode($products)}}" 
+        data-seeds="{{json_encode($seeds)}}" 
+        data-planes="{{json_encode($planes)}}"
+        data-fertilizers="{{json_encode($fertilizers)}}"
+        data-inventory="{{json_encode($inventory)}}"
+        data-food="{{json_encode($food)}}"
+        data-user="{{Auth::user()}}"
+    >
+    @endguest
+
     </div>
 </body>
+
+<script>
+    var csrf_token = '<?php echo csrf_token() ?>';
+</script>
 
 </html>
