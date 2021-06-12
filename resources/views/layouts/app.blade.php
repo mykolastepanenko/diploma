@@ -10,6 +10,8 @@ $planes = DB::select('select * from products where category = "planes"');
 $inventory = DB::select('select * from products where category = "inventory"');
 $fertilizers = DB::select('select * from products where category = "fertilizer"');
 $food = DB::select('select * from products where category = "food"');
+$users = DB::select('select * from users');
+
 ?>
 
 <!doctype html>
@@ -60,6 +62,7 @@ $food = DB::select('select * from products where category = "food"');
         data-inventory="{{json_encode($inventory)}}"
         data-food="{{json_encode($food)}}"
         data-user="{{Auth::user()}}"
+        data-users="{{json_encode($users)}}"
     >
     @endguest
 

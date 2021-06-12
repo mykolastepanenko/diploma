@@ -125,6 +125,10 @@ Route::get('category/5', function () {
     return view('layouts.app');
 });
 
+Route::get('admin-panel', function () {
+    return view('layouts.app');
+});
+
 // Route::get('register', function () {
 //     return view('layouts.app');
 // });
@@ -136,6 +140,20 @@ Route::get('home', function () {
     return redirect('/');
 });
 
-Auth::routes();
+Auth::routes(); 
+
+// Route::get('register', function () {
+//     return view('auth.register');
+// });
+
+// Route::get('register', '\App\Http\Controllers\Auth\RegisterController@showRegistrationForm')->name('register');
+// Route::post('register', '\App\Http\Controllers\Auth\RegisterController@register');
+
+
+// Route::get('login', '\App\Http\Controllers\Auth\LoginController@showLoginForm')->name('login');
+// Route::post('login', '\App\Http\Controllers\Auth\LoginController@login');
+// Route::post('register', 'Auth\RegisterController@register');
+
+// Route::get('register', '\App\Http\Controllers\Auth\RegisterController@create');
 
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');

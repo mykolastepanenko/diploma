@@ -30,6 +30,16 @@ function Nav(props) {
                     <ul className="navbar-nav mr-auto"></ul>
                     <ul className="navbar-nav ml-auto">
                         <li className="nav-item">
+                            {props.hasOwnProperty("user") ? (
+                                <Link
+                                    className="nav-link text-white-hover"
+                                    to="/admin-panel"
+                                >
+                                    Адмін панель
+                                </Link>
+                            ) : null}
+                        </li>
+                        <li className="nav-item">
                             <Link
                                 className="nav-link text-white-hover"
                                 to="/cart"

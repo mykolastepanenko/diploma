@@ -8,6 +8,7 @@ import Category from "./pages/Category";
 import Cart from "./pages/Cart";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
+import AdminPanel from "./pages/AdminPanel";
 
 import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
@@ -45,12 +46,6 @@ function FrontEnd() {
         <Router>
             {user === null ? <Nav /> : <Nav user={user} />}
             <Switch>
-                {/* <Route path="/login">
-                    <Login />
-                </Route>
-                <Route path="/register">
-                    <Register />
-                </Route> */}
                 <Route path="/cart">
                     <Cart cart={cart} />
                 </Route>
@@ -59,6 +54,9 @@ function FrontEnd() {
                 </Route>
                 <Route path="/category/:id">
                     <Category categories={categories} />
+                </Route>
+                <Route path="/admin-panel">
+                    <AdminPanel />
                 </Route>
                 <Route path="/">
                     <Home app={app} />
