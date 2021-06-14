@@ -19,6 +19,21 @@ export default function AdminPanel() {
     const [createProductName, setCreateProductName] = React.useState("");
     const [createProductPrice, setCreateProductPrice] = React.useState("");
     const [createProductCount, setCreateProductCount] = React.useState("");
+    const [option, setOption] = React.useState("");
+    const [createProductCategory, setCreateProductCategory] =
+        React.useState("");
+
+    const [isEditCategory, setIsEditCategory] = React.useState(
+        new Array(categories.length)
+    );
+    const [isEditProduct, setIsEditProduct] = React.useState(
+        new Array(products.length)
+    );
+
+    for (let i = 0; i < isEditCategory.length; i++) {
+        isEditCategory[i] = false;
+        console.log(isEditCategory[i]);
+    }
 
     function submitHandler(e) {
         e.preventDefault();
@@ -51,12 +66,27 @@ export default function AdminPanel() {
 
     function deleteHandler(target, index) {
         console.log(target);
+        let formData;
         switch (target) {
             case "deleteCategory":
-                const formData = new FormData();
+                formData = new FormData();
                 formData.append("_token", csrf_token);
                 formData.append("id", index);
                 fetch("/deleteCategory", {
+                    method: "POST",
+                    body: formData,
+                })
+                    .then((response) => {
+                        console.log(response);
+                        location.reload();
+                    })
+                    .catch((err) => console.log(err));
+                break;
+            case "deleteProduct":
+                formData = new FormData();
+                formData.append("_token", csrf_token);
+                formData.append("id", index);
+                fetch("/deleteProduct", {
                     method: "POST",
                     body: formData,
                 })
@@ -105,9 +135,26 @@ export default function AdminPanel() {
                 {categories.map((item, index) => (
                     <div className="row mb-2 text-center" key={index}>
                         <div className="col-1">{item.id}</div>
-                        <div className="col">{item.name}</div>
                         <div className="col">
-                            <button className="btn btn-secondary">
+                            {isEditCategory[index] === false ? (
+                                item.name
+                            ) : (
+                                <input type="text" />
+                            )}
+                        </div>
+                        <div className="col">
+                            <button
+                                className="btn btn-secondary"
+                                onClick={() => {
+                                    const array = isEditCategory;
+                                    console.log(array);
+                                    array[index] = true;
+                                    console.log(array);
+                                    setIsEditCategory(array);
+                                    console.log("state edit below");
+                                    console.log(isEditCategory);
+                                }}
+                            >
                                 Редагувати
                             </button>
                         </div>
@@ -184,6 +231,7 @@ export default function AdminPanel() {
                     <div className="col">Назва</div>
                     <div className="col">Ціна</div>
                     <div className="col">Кількість</div>
+                    <div className="col">Категорія</div>
                     <div className="col">Редагувати</div>
                     <div className="col">Видалити</div>
                 </div>
@@ -199,6 +247,7 @@ export default function AdminPanel() {
                         <div className="col">{item.name}</div>
                         <div className="col">{item.price}</div>
                         <div className="col">{item.count}</div>
+                        <div className="col">{item.category}</div>
                         <div className="col">
                             <button
                                 className={
@@ -218,6 +267,10 @@ export default function AdminPanel() {
                                     (index % 2 === 0
                                         ? "btn-outline-secondary"
                                         : "btn-outline-light")
+                                }
+                                id="deleteProduct"
+                                onClick={(e) =>
+                                    deleteHandler(e.target.id, item.id)
                                 }
                             >
                                 Видалити
@@ -247,45 +300,80 @@ export default function AdminPanel() {
                         >
                             Закрити
                         </button>
-                        <input
-                            type="text"
-                            className="w-100 text-center py-2 px-3 mt-3"
-                            placeholder="Назва продукту"
-                            value={createProductName}
-                            onChange={(e) => {
-                                setCreateProductName(e.target.value);
-                            }}
-                        />
-                        <input
-                            type="text"
-                            className="w-100 text-center py-2 px-3 mt-3"
-                            placeholder="Ціна продукту"
-                            value={createProductPrice}
-                            onChange={(e) => {
-                                setCreateProductPrice(e.target.value);
-                            }}
-                        />
-                        <input
-                            type="text"
-                            className="w-100 text-center py-2 px-3 mt-3"
-                            placeholder="Кількість продукту"
-                            value={createProductCount}
-                            onChange={(e) => {
-                                setCreateProductCount(e.target.value);
-                            }}
-                        />
-                        <button
-                            className="btn btn-secondary w-100 mt-3"
-                            onClick={() => {
-                                alert(`
-                                ${createProductName}
-                                ${createProductPrice}
-                                ${createProductCount}
-                                `);
-                            }}
+                        <form
+                            action="/addProduct"
+                            method="POST"
+                            id="form_product"
+                            name="form_product"
                         >
-                            Створити
-                        </button>
+                            <input
+                                type="text"
+                                hidden
+                                name="_token"
+                                value={csrf_token}
+                            />
+                            <input
+                                type="text"
+                                name="name"
+                                className="w-100 text-center py-2 px-3 mt-3"
+                                placeholder="Назва продукту"
+                                value={createProductName}
+                                onChange={(e) => {
+                                    setCreateProductName(e.target.value);
+                                }}
+                            />
+                            <input
+                                type="text"
+                                name="price"
+                                className="w-100 text-center py-2 px-3 mt-3"
+                                placeholder="Ціна продукту"
+                                value={createProductPrice}
+                                onChange={(e) => {
+                                    setCreateProductPrice(e.target.value);
+                                }}
+                            />
+                            <input
+                                type="text"
+                                name="count"
+                                className="w-100 text-center py-2 px-3 mt-3"
+                                placeholder="Кількість продукту"
+                                value={createProductCount}
+                                onChange={(e) => {
+                                    setCreateProductCount(e.target.value);
+                                }}
+                            />
+                            {/* <input
+                                type="text"
+                                name="category"
+                                className="w-100 text-center py-2 px-3 mt-3"
+                                placeholder="Категорія продукту"
+                                value={createProductCategory}
+                                onChange={(e) => {
+                                    setCreateProductCategory(e.target.value);
+                                }}
+                            /> */}
+
+                            <select
+                                name="category"
+                                value={option}
+                                onChange={(e) => {
+                                    setOption(e.target.value);
+                                }}
+                            >
+                                {categories.map((item) => (
+                                    <option className="d-block w-100 mt-3" value={item.name}>
+                                        {item.name}
+                                    </option>
+                                ))}
+                            </select>
+
+                            <button
+                                className="btn btn-secondary w-100 mt-3"
+                                type="submit"
+                            >
+                                Створити
+                            </button>
+                        </form>
                     </>
                 )}
             </div>

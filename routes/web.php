@@ -162,4 +162,7 @@ Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 // Route::get('addCategory', '\App\Http\Controllers\Admin@addCategory');
 
 Route::post('addCategory', '\App\Http\Controllers\Admin@addCategory');
+Route::post('addProduct', '\App\Http\Controllers\Admin@addProduct');
+
 Route::post('deleteCategory', '\App\Http\Controllers\Admin@deleteCategory');
+Route::post('deleteProduct', '\App\Http\Controllers\Admin@deleteProduct');

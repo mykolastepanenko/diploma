@@ -2718,6 +2718,31 @@ function AdminPanel() {
       createProductCount = _React$useState12[0],
       setCreateProductCount = _React$useState12[1];
 
+  var _React$useState13 = react__WEBPACK_IMPORTED_MODULE_0__.useState(""),
+      _React$useState14 = _slicedToArray(_React$useState13, 2),
+      option = _React$useState14[0],
+      setOption = _React$useState14[1];
+
+  var _React$useState15 = react__WEBPACK_IMPORTED_MODULE_0__.useState(""),
+      _React$useState16 = _slicedToArray(_React$useState15, 2),
+      createProductCategory = _React$useState16[0],
+      setCreateProductCategory = _React$useState16[1];
+
+  var _React$useState17 = react__WEBPACK_IMPORTED_MODULE_0__.useState(new Array(categories.length)),
+      _React$useState18 = _slicedToArray(_React$useState17, 2),
+      isEditCategory = _React$useState18[0],
+      setIsEditCategory = _React$useState18[1];
+
+  var _React$useState19 = react__WEBPACK_IMPORTED_MODULE_0__.useState(new Array(products.length)),
+      _React$useState20 = _slicedToArray(_React$useState19, 2),
+      isEditProduct = _React$useState20[0],
+      setIsEditProduct = _React$useState20[1];
+
+  for (var i = 0; i < isEditCategory.length; i++) {
+    isEditCategory[i] = false;
+    console.log(isEditCategory[i]);
+  }
+
   function submitHandler(e) {
     e.preventDefault();
     console.log(e.target);
@@ -2763,13 +2788,29 @@ function AdminPanel() {
 
   function deleteHandler(target, index) {
     console.log(target);
+    var formData;
 
     switch (target) {
       case "deleteCategory":
-        var formData = new FormData();
+        formData = new FormData();
         formData.append("_token", csrf_token);
         formData.append("id", index);
         fetch("/deleteCategory", {
+          method: "POST",
+          body: formData
+        }).then(function (response) {
+          console.log(response);
+          location.reload();
+        })["catch"](function (err) {
+          return console.log(err);
+        });
+        break;
+
+      case "deleteProduct":
+        formData = new FormData();
+        formData.append("_token", csrf_token);
+        formData.append("id", index);
+        fetch("/deleteProduct", {
           method: "POST",
           body: formData
         }).then(function (response) {
@@ -2851,11 +2892,22 @@ function AdminPanel() {
             children: item.id
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
             className: "col",
-            children: item.name
+            children: isEditCategory[index] === false ? item.name : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+              type: "text"
+            })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
             className: "col",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
               className: "btn btn-secondary",
+              onClick: function onClick() {
+                var array = isEditCategory;
+                console.log(array);
+                array[index] = true;
+                console.log(array);
+                setIsEditCategory(array);
+                console.log("state edit below");
+                console.log(isEditCategory);
+              },
               children: "\u0420\u0435\u0434\u0430\u0433\u0443\u0432\u0430\u0442\u0438"
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
@@ -2928,6 +2980,9 @@ function AdminPanel() {
           children: "\u041A\u0456\u043B\u044C\u043A\u0456\u0441\u0442\u044C"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
           className: "col",
+          children: "\u041A\u0430\u0442\u0435\u0433\u043E\u0440\u0456\u044F"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+          className: "col",
           children: "\u0420\u0435\u0434\u0430\u0433\u0443\u0432\u0430\u0442\u0438"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
           className: "col",
@@ -2950,6 +3005,9 @@ function AdminPanel() {
             children: item.count
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
             className: "col",
+            children: item.category
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+            className: "col",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
               className: "btn " + (index % 2 === 0 ? "btn-outline-secondary" : "btn-outline-light"),
               children: "\u0420\u0435\u0434\u0430\u0433\u0443\u0432\u0430\u0442\u0438"
@@ -2958,6 +3016,10 @@ function AdminPanel() {
             className: "col",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
               className: "btn " + (index % 2 === 0 ? "btn-outline-secondary" : "btn-outline-light"),
+              id: "deleteProduct",
+              onClick: function onClick(e) {
+                return deleteHandler(e.target.id, item.id);
+              },
               children: "\u0412\u0438\u0434\u0430\u043B\u0438\u0442\u0438"
             })
           })]
@@ -2975,36 +3037,61 @@ function AdminPanel() {
             setIsCreateProduct(false);
           },
           children: "\u0417\u0430\u043A\u0440\u0438\u0442\u0438"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
-          type: "text",
-          className: "w-100 text-center py-2 px-3 mt-3",
-          placeholder: "\u041D\u0430\u0437\u0432\u0430 \u043F\u0440\u043E\u0434\u0443\u043A\u0442\u0443",
-          value: createProductName,
-          onChange: function onChange(e) {
-            setCreateProductName(e.target.value);
-          }
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
-          type: "text",
-          className: "w-100 text-center py-2 px-3 mt-3",
-          placeholder: "\u0426\u0456\u043D\u0430 \u043F\u0440\u043E\u0434\u0443\u043A\u0442\u0443",
-          value: createProductPrice,
-          onChange: function onChange(e) {
-            setCreateProductPrice(e.target.value);
-          }
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
-          type: "text",
-          className: "w-100 text-center py-2 px-3 mt-3",
-          placeholder: "\u041A\u0456\u043B\u044C\u043A\u0456\u0441\u0442\u044C \u043F\u0440\u043E\u0434\u0443\u043A\u0442\u0443",
-          value: createProductCount,
-          onChange: function onChange(e) {
-            setCreateProductCount(e.target.value);
-          }
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
-          className: "btn btn-secondary w-100 mt-3",
-          onClick: function onClick() {
-            alert("\n                                ".concat(createProductName, "\n                                ").concat(createProductPrice, "\n                                ").concat(createProductCount, "\n                                "));
-          },
-          children: "\u0421\u0442\u0432\u043E\u0440\u0438\u0442\u0438"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("form", {
+          action: "/addProduct",
+          method: "POST",
+          id: "form_product",
+          name: "form_product",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+            type: "text",
+            hidden: true,
+            name: "_token",
+            value: csrf_token
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+            type: "text",
+            name: "name",
+            className: "w-100 text-center py-2 px-3 mt-3",
+            placeholder: "\u041D\u0430\u0437\u0432\u0430 \u043F\u0440\u043E\u0434\u0443\u043A\u0442\u0443",
+            value: createProductName,
+            onChange: function onChange(e) {
+              setCreateProductName(e.target.value);
+            }
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+            type: "text",
+            name: "price",
+            className: "w-100 text-center py-2 px-3 mt-3",
+            placeholder: "\u0426\u0456\u043D\u0430 \u043F\u0440\u043E\u0434\u0443\u043A\u0442\u0443",
+            value: createProductPrice,
+            onChange: function onChange(e) {
+              setCreateProductPrice(e.target.value);
+            }
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+            type: "text",
+            name: "count",
+            className: "w-100 text-center py-2 px-3 mt-3",
+            placeholder: "\u041A\u0456\u043B\u044C\u043A\u0456\u0441\u0442\u044C \u043F\u0440\u043E\u0434\u0443\u043A\u0442\u0443",
+            value: createProductCount,
+            onChange: function onChange(e) {
+              setCreateProductCount(e.target.value);
+            }
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("select", {
+            name: "category",
+            value: option,
+            onChange: function onChange(e) {
+              setOption(e.target.value);
+            },
+            children: categories.map(function (item) {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
+                className: "d-block w-100 mt-3",
+                value: item.name,
+                children: item.name
+              });
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+            className: "btn btn-secondary w-100 mt-3",
+            type: "submit",
+            children: "\u0421\u0442\u0432\u043E\u0440\u0438\u0442\u0438"
+          })]
         })]
       })]
     })]
