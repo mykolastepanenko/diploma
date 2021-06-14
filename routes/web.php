@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -140,7 +142,7 @@ Route::get('home', function () {
     return redirect('/');
 });
 
-Auth::routes(); 
+Auth::routes();
 
 // Route::get('register', function () {
 //     return view('auth.register');
@@ -157,3 +159,7 @@ Auth::routes();
 // Route::get('register', '\App\Http\Controllers\Auth\RegisterController@create');
 
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+// Route::get('addCategory', '\App\Http\Controllers\Admin@addCategory');
+
+Route::post('addCategory', '\App\Http\Controllers\Admin@addCategory');
+Route::post('deleteCategory', '\App\Http\Controllers\Admin@deleteCategory');

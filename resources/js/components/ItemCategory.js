@@ -2,16 +2,20 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function ItemCategory(props) {
+    console.log(props.category.img);
+    // if(props.category.img === null) alert("Нет картинки")
     return (
         <div
             className="card mx-auto mb-3 grayscale"
             style={{ width: "14rem", height: "14rem" }}
         >
-            <img
-                src={props.category.img}
-                className="card-img-top w-100 h-100"
-                alt="..."
-            />
+            {props.category.img !== "null" ? (
+                <img
+                    src={props.category.img}
+                    className="card-img-top w-100 h-100"
+                    alt="..."
+                />
+            ) : null}
             <div className="card-img-overlay text-white d-flex justify-content-center align-items-center">
                 <h5
                     className="card-title text-uppercase text-center mb-0"

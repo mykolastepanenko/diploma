@@ -36,11 +36,9 @@ function BestCategoryContainer(props) {
             <div className={"row"}>
                 <div className="col">
                     <Slider {...settings}>
-                        <ItemCategory category={props.categories[0]} />
-                        <ItemCategory category={props.categories[1]} />
-                        <ItemCategory category={props.categories[2]} />
-                        <ItemCategory category={props.categories[3]} />
-                        <ItemCategory category={props.categories[4]} />
+                        {props.categories.map((item, index) => (
+                            <ItemCategory category={props.categories[index]} />
+                        ))}
                     </Slider>
                 </div>
             </div>
