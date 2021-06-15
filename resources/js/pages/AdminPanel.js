@@ -6,10 +6,7 @@ export default function AdminPanel() {
     const categories = JSON.parse(app.getAttribute("data-categories"));
     const products = JSON.parse(app.getAttribute("data-products"));
 
-    console.log("users");
-    console.log(users);
-
-    console.log(categories);
+    const [render, setRender] = React.useState(false);
 
     const [isCreateCategory, setIsCreateCategory] = React.useState(false);
     const [isCreateProduct, setIsCreateProduct] = React.useState(false);
@@ -23,17 +20,22 @@ export default function AdminPanel() {
     const [createProductCategory, setCreateProductCategory] =
         React.useState("");
 
-    const [isEditCategory, setIsEditCategory] = React.useState(
-        new Array(categories.length)
-    );
+    const editCategoryValue = new Array(categories.length);
+    editCategoryValue.fill(false);
+    const [isEditCategory, setIsEditCategory] =
+        React.useState(editCategoryValue);
+
     const [isEditProduct, setIsEditProduct] = React.useState(
         new Array(products.length)
     );
 
-    for (let i = 0; i < isEditCategory.length; i++) {
-        isEditCategory[i] = false;
-        console.log(isEditCategory[i]);
+    let categoryNameValue = new Array(categories.length);
+    console.log("typeof categoryNameValue: ", typeof categoryNameValue);
+    for (let i = 0; i < categories.length; i++) {
+        categoryNameValue[i] = categories[i].name;
     }
+    const [editCategoryName, setEditCategoryName] =
+        React.useState(categoryNameValue);
 
     function submitHandler(e) {
         e.preventDefault();
@@ -63,6 +65,8 @@ export default function AdminPanel() {
                 break;
         }
     }
+
+    function updateHandler(target, index) {}
 
     function deleteHandler(target, index) {
         console.log(target);
@@ -139,35 +143,74 @@ export default function AdminPanel() {
                             {isEditCategory[index] === false ? (
                                 item.name
                             ) : (
-                                <input type="text" />
+                                <input
+                                    type="text"
+                                    value={editCategoryName[index]}
+                                    onChange={(e) => {
+                                        let arr = categoryNameValue;
+                                        console.log("name", editCategoryName);
+                                        console.log("arr: ", arr);
+                                        arr[index] = e.target.value;
+                                        setEditCategoryName(arr);
+                                        setRender(!render);
+                                    }}
+                                />
                             )}
                         </div>
                         <div className="col">
-                            <button
-                                className="btn btn-secondary"
-                                onClick={() => {
-                                    const array = isEditCategory;
-                                    console.log(array);
-                                    array[index] = true;
-                                    console.log(array);
-                                    setIsEditCategory(array);
-                                    console.log("state edit below");
-                                    console.log(isEditCategory);
-                                }}
-                            >
-                                Редагувати
-                            </button>
+                            {isEditCategory[index] === false ? (
+                                <button
+                                    className="btn btn-secondary"
+                                    onClick={() => {
+                                        let arr = isEditCategory;
+                                        arr[index] = !arr[index];
+                                        setIsEditCategory(arr);
+                                        setRender(!render);
+                                    }}
+                                >
+                                    Редагувати
+                                </button>
+                            ) : (
+                                <button
+                                    className="btn btn-success"
+                                    onClick={() => {
+                                        let arr = isEditCategory;
+                                        arr[index] = !arr[index];
+                                        setIsEditCategory(arr);
+                                        setRender(!render);
+                                        updateHandler(e.target.id, item.id);
+                                    }}
+                                >
+                                    Зберегти
+                                </button>
+                            )}
                         </div>
                         <div className="col">
-                            <button
-                                className="btn btn-secondary"
-                                id="deleteCategory"
-                                onClick={(e) =>
-                                    deleteHandler(e.target.id, item.id)
-                                }
-                            >
-                                Видалити
-                            </button>
+                            {isEditCategory[index] === false ? (
+                                <button
+                                    className="btn btn-secondary"
+                                    id="deleteCategory"
+                                    onClick={(e) =>
+                                        deleteHandler(e.target.id, item.id)
+                                    }
+                                >
+                                    Видалити
+                                </button>
+                            ) : (
+                                <button
+                                    className="btn btn-danger"
+                                    id="deleteCategory"
+                                    onClick={(e) => {
+                                        console.log("edit func");
+                                        let arr = isEditCategory;
+                                        arr[index] = !arr[index];
+                                        setIsEditCategory(arr);
+                                        setRender(!render);
+                                    }}
+                                >
+                                    Закрити
+                                </button>
+                            )}
                         </div>
                     </div>
                 ))}
@@ -361,7 +404,10 @@ export default function AdminPanel() {
                                 }}
                             >
                                 {categories.map((item) => (
-                                    <option className="d-block w-100 mt-3" value={item.name}>
+                                    <option
+                                        className="d-block w-100 mt-3"
+                                        value={item.name}
+                                    >
                                         {item.name}
                                     </option>
                                 ))}

@@ -29,6 +29,13 @@ class Admin extends Controller
         return redirect('/admin-panel');
     }
 
+    public function editCategory(Request $request)
+    {
+        DB::table('categories')
+            ->where('id', $request->id)
+            ->update(['name' => $request->name]);
+    }
+
     public function deleteCategory(Request $request)
     {
         DB::table('categories')->where('id', '=', $request->id)->delete();

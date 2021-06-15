@@ -2661,7 +2661,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e2) { throw _e2; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e3) { didErr = true; err = _e3; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function (_e2) { function e(_x) { return _e2.apply(this, arguments); } e.toString = function () { return _e2.toString(); }; return e; }(function (e) { throw e; }), f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function (_e3) { function e(_x2) { return _e3.apply(this, arguments); } e.toString = function () { return _e3.toString(); }; return e; }(function (e) { didErr = true; err = e; }), f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
@@ -2684,64 +2686,76 @@ function AdminPanel() {
   var users = JSON.parse(app.getAttribute("data-users"));
   var categories = JSON.parse(app.getAttribute("data-categories"));
   var products = JSON.parse(app.getAttribute("data-products"));
-  console.log("users");
-  console.log(users);
-  console.log(categories);
 
   var _React$useState = react__WEBPACK_IMPORTED_MODULE_0__.useState(false),
       _React$useState2 = _slicedToArray(_React$useState, 2),
-      isCreateCategory = _React$useState2[0],
-      setIsCreateCategory = _React$useState2[1];
+      render = _React$useState2[0],
+      setRender = _React$useState2[1];
 
   var _React$useState3 = react__WEBPACK_IMPORTED_MODULE_0__.useState(false),
       _React$useState4 = _slicedToArray(_React$useState3, 2),
-      isCreateProduct = _React$useState4[0],
-      setIsCreateProduct = _React$useState4[1];
+      isCreateCategory = _React$useState4[0],
+      setIsCreateCategory = _React$useState4[1];
 
-  var _React$useState5 = react__WEBPACK_IMPORTED_MODULE_0__.useState(""),
+  var _React$useState5 = react__WEBPACK_IMPORTED_MODULE_0__.useState(false),
       _React$useState6 = _slicedToArray(_React$useState5, 2),
-      createCategoryName = _React$useState6[0],
-      setCreateCategoryName = _React$useState6[1];
+      isCreateProduct = _React$useState6[0],
+      setIsCreateProduct = _React$useState6[1];
 
   var _React$useState7 = react__WEBPACK_IMPORTED_MODULE_0__.useState(""),
       _React$useState8 = _slicedToArray(_React$useState7, 2),
-      createProductName = _React$useState8[0],
-      setCreateProductName = _React$useState8[1];
+      createCategoryName = _React$useState8[0],
+      setCreateCategoryName = _React$useState8[1];
 
   var _React$useState9 = react__WEBPACK_IMPORTED_MODULE_0__.useState(""),
       _React$useState10 = _slicedToArray(_React$useState9, 2),
-      createProductPrice = _React$useState10[0],
-      setCreateProductPrice = _React$useState10[1];
+      createProductName = _React$useState10[0],
+      setCreateProductName = _React$useState10[1];
 
   var _React$useState11 = react__WEBPACK_IMPORTED_MODULE_0__.useState(""),
       _React$useState12 = _slicedToArray(_React$useState11, 2),
-      createProductCount = _React$useState12[0],
-      setCreateProductCount = _React$useState12[1];
+      createProductPrice = _React$useState12[0],
+      setCreateProductPrice = _React$useState12[1];
 
   var _React$useState13 = react__WEBPACK_IMPORTED_MODULE_0__.useState(""),
       _React$useState14 = _slicedToArray(_React$useState13, 2),
-      option = _React$useState14[0],
-      setOption = _React$useState14[1];
+      createProductCount = _React$useState14[0],
+      setCreateProductCount = _React$useState14[1];
 
   var _React$useState15 = react__WEBPACK_IMPORTED_MODULE_0__.useState(""),
       _React$useState16 = _slicedToArray(_React$useState15, 2),
-      createProductCategory = _React$useState16[0],
-      setCreateProductCategory = _React$useState16[1];
+      option = _React$useState16[0],
+      setOption = _React$useState16[1];
 
-  var _React$useState17 = react__WEBPACK_IMPORTED_MODULE_0__.useState(new Array(categories.length)),
+  var _React$useState17 = react__WEBPACK_IMPORTED_MODULE_0__.useState(""),
       _React$useState18 = _slicedToArray(_React$useState17, 2),
-      isEditCategory = _React$useState18[0],
-      setIsEditCategory = _React$useState18[1];
+      createProductCategory = _React$useState18[0],
+      setCreateProductCategory = _React$useState18[1];
 
-  var _React$useState19 = react__WEBPACK_IMPORTED_MODULE_0__.useState(new Array(products.length)),
+  var editCategoryValue = new Array(categories.length);
+  editCategoryValue.fill(false);
+
+  var _React$useState19 = react__WEBPACK_IMPORTED_MODULE_0__.useState(editCategoryValue),
       _React$useState20 = _slicedToArray(_React$useState19, 2),
-      isEditProduct = _React$useState20[0],
-      setIsEditProduct = _React$useState20[1];
+      isEditCategory = _React$useState20[0],
+      setIsEditCategory = _React$useState20[1];
 
-  for (var i = 0; i < isEditCategory.length; i++) {
-    isEditCategory[i] = false;
-    console.log(isEditCategory[i]);
+  var _React$useState21 = react__WEBPACK_IMPORTED_MODULE_0__.useState(new Array(products.length)),
+      _React$useState22 = _slicedToArray(_React$useState21, 2),
+      isEditProduct = _React$useState22[0],
+      setIsEditProduct = _React$useState22[1];
+
+  var categoryNameValue = new Array(categories.length);
+  console.log("typeof categoryNameValue: ", _typeof(categoryNameValue));
+
+  for (var i = 0; i < categories.length; i++) {
+    categoryNameValue[i] = categories[i].name;
   }
+
+  var _React$useState23 = react__WEBPACK_IMPORTED_MODULE_0__.useState(categoryNameValue),
+      _React$useState24 = _slicedToArray(_React$useState23, 2),
+      editCategoryName = _React$useState24[0],
+      setEditCategoryName = _React$useState24[1];
 
   function submitHandler(e) {
     e.preventDefault();
@@ -2785,6 +2799,8 @@ function AdminPanel() {
         break;
     }
   }
+
+  function updateHandler(target, index) {}
 
   function deleteHandler(target, index) {
     console.log(target);
@@ -2893,32 +2909,59 @@ function AdminPanel() {
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
             className: "col",
             children: isEditCategory[index] === false ? item.name : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
-              type: "text"
+              type: "text",
+              value: editCategoryName[index],
+              onChange: function onChange(e) {
+                var arr = categoryNameValue;
+                console.log("name", editCategoryName);
+                console.log("arr: ", arr);
+                arr[index] = e.target.value;
+                setEditCategoryName(arr);
+                setRender(!render);
+              }
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
             className: "col",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+            children: isEditCategory[index] === false ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
               className: "btn btn-secondary",
               onClick: function onClick() {
-                var array = isEditCategory;
-                console.log(array);
-                array[index] = true;
-                console.log(array);
-                setIsEditCategory(array);
-                console.log("state edit below");
-                console.log(isEditCategory);
+                var arr = isEditCategory;
+                arr[index] = !arr[index];
+                setIsEditCategory(arr);
+                setRender(!render);
               },
               children: "\u0420\u0435\u0434\u0430\u0433\u0443\u0432\u0430\u0442\u0438"
+            }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+              className: "btn btn-success",
+              onClick: function onClick() {
+                var arr = isEditCategory;
+                arr[index] = !arr[index];
+                setIsEditCategory(arr);
+                setRender(!render);
+                updateHandler(e.target.id, item.id);
+              },
+              children: "\u0417\u0431\u0435\u0440\u0435\u0433\u0442\u0438"
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
             className: "col",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+            children: isEditCategory[index] === false ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
               className: "btn btn-secondary",
               id: "deleteCategory",
               onClick: function onClick(e) {
                 return deleteHandler(e.target.id, item.id);
               },
               children: "\u0412\u0438\u0434\u0430\u043B\u0438\u0442\u0438"
+            }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+              className: "btn btn-danger",
+              id: "deleteCategory",
+              onClick: function onClick(e) {
+                console.log("edit func");
+                var arr = isEditCategory;
+                arr[index] = !arr[index];
+                setIsEditCategory(arr);
+                setRender(!render);
+              },
+              children: "\u0417\u0430\u043A\u0440\u0438\u0442\u0438"
             })
           })]
         }, index);
