@@ -2458,7 +2458,7 @@ function Nav(props) {
           className: "navbar-nav ml-auto",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
             className: "nav-item",
-            children: props.hasOwnProperty("user") ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
+            children: props.hasOwnProperty("user") ? props.user.isAdmin && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
               className: "nav-link text-white-hover",
               to: "/admin-panel",
               children: "\u0410\u0434\u043C\u0456\u043D \u043F\u0430\u043D\u0435\u043B\u044C"
