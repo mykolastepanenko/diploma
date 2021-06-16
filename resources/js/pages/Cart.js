@@ -1,23 +1,29 @@
 import React from "react";
 
 export default function Cart(props) {
-    console.log(state);
     const [state, setState] = React.useState(false);
-    console.log("\n\n\n\n");
-    console.log(props);
-    console.log(props.cart.cart);
+
+    let summ = 0;
+    props.cart.cart.forEach((item) => {
+        summ += item.price;
+    });
+
     return (
         <>
-            <div className={"container"} style={{ paddingTop: "100px", minHeight: 'calc(100vh - 70px)' }}>
+            <div
+                className={"container"}
+                style={{ paddingTop: "100px", minHeight: "calc(100vh - 70px)" }}
+            >
                 <h1>Корзина</h1>
                 {props.cart.cart.length === 0 ? (
                     <div>Корзина пуста</div>
                 ) : (
-                    <ul>
+                    <div className="d-flex align-items-center justify-content-center flex-column">
                         {props.cart.cart.map((item, index) => {
                             return (
-                                <li key={index}>
-                                    {item.name}
+                                <div key={index} className="mt-2">
+                                    <span>{item.name}, </span>
+                                    <span>{item.price} грн</span>
                                     <span
                                         className="ml-3"
                                         style={{ cursor: "pointer" }}
@@ -28,13 +34,14 @@ export default function Cart(props) {
                                     >
                                         &times;
                                     </span>
-                                </li>
+                                </div>
                             );
                         })}
-                    </ul>
+                    </div>
                 )}
+                {props.cart.cart.length !== 0 && <div className="text-center mt-2">Сума: {summ} грн</div>}
                 {props.cart.cart.length > 0 && (
-                    <>
+                    <div className="mt-2 d-flex justify-content-center">
                         <button type="button" className="btn btn-success">
                             Підтвердити замовлення
                         </button>
@@ -48,7 +55,7 @@ export default function Cart(props) {
                         >
                             Очистити корзину
                         </button>
-                    </>
+                    </div>
                 )}
             </div>
         </>
