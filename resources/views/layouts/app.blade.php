@@ -5,11 +5,11 @@ use Illuminate\Support\Facades\DB;
 $categories = DB::select('select * from categories');
 $products = DB::select('select * from products');
 
-$seeds = DB::select('select * from products where category = "seeds"');
-$planes = DB::select('select * from products where category = "planes"');
-$inventory = DB::select('select * from products where category = "inventory"');
-$fertilizers = DB::select('select * from products where category = "fertilizer"');
-$food = DB::select('select * from products where category = "food"');
+$seeds = DB::select('select * from products where category = "Насіння"');
+$planes = DB::select('select * from products where category = "Сажанці"');
+$inventory = DB::select('select * from products where category = "Добрива"');
+$fertilizers = DB::select('select * from products where category = "Садовий інвентар"');
+$food = DB::select('select * from products where category = "Продукти харчування"');
 $users = DB::select('select * from users');
 
 ?>

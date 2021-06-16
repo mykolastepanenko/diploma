@@ -17,8 +17,6 @@ const app = document.getElementById("app");
 const categories = JSON.parse(app.getAttribute("data-categories"));
 const products = JSON.parse(app.getAttribute("data-products"));
 const user = JSON.parse(app.getAttribute("data-user"));
-console.log("\n\n\nuser");
-console.log(user);
 
 function FrontEnd() {
     const cart = {
@@ -57,6 +55,12 @@ function FrontEnd() {
                 </Route>
                 <Route path="/admin-panel">
                     <AdminPanel />
+                </Route>
+                <Route path="/login">
+                    <Login />
+                </Route>
+                <Route path="/register">
+                    <Register />
                 </Route>
                 <Route path="/">
                     <Home app={app} />

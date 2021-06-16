@@ -53,12 +53,12 @@ function Nav(props) {
                                     {props.user.name}
                                 </a>
                             ) : (
-                                <a
+                                <Link
                                     className="nav-link text-white-hover"
-                                    href="/login"
+                                    to="/login"
                                 >
                                     Увійти
-                                </a>
+                                </Link>
                             )}
                         </li>
                         <li className="nav-item">
@@ -70,12 +70,12 @@ function Nav(props) {
                                     Вийти
                                 </a>
                             ) : (
-                                <a
+                                <Link
                                     className="nav-link text-white-hover"
-                                    href="/register"
+                                    to="/register"
                                 >
                                     Реєстрація
-                                </a>
+                                </Link>
                             )}
                         </li>
                     </ul>

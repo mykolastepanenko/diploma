@@ -142,7 +142,7 @@ Route::get('home', function () {
     return redirect('/');
 });
 
-Auth::routes();
+// Auth::routes();
 
 // Route::get('register', function () {
 //     return view('auth.register');
@@ -154,8 +154,14 @@ Auth::routes();
 
 // Route::get('login', '\App\Http\Controllers\Auth\LoginController@showLoginForm')->name('login');
 // Route::post('login', '\App\Http\Controllers\Auth\LoginController@login');
-// Route::post('register', 'Auth\RegisterController@register');
-
+Route::post('login', '\App\Http\Controllers\Auth\LoginController@login');
+Route::get('login', function () {
+    return view('layouts.app');
+});
+Route::post('register', '\App\Http\Controllers\Auth\RegisterController@create');
+Route::get('register', function () {
+    return view('layouts.app');
+});
 // Route::get('register', '\App\Http\Controllers\Auth\RegisterController@create');
 
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');

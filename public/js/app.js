@@ -2475,9 +2475,9 @@ function Nav(props) {
             children: props.hasOwnProperty("user") ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
               className: "nav-link text-white-hover",
               children: props.user.name
-            }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+            }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
               className: "nav-link text-white-hover",
-              href: "/login",
+              to: "/login",
               children: "\u0423\u0432\u0456\u0439\u0442\u0438"
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
@@ -2486,9 +2486,9 @@ function Nav(props) {
               className: "nav-link text-white-hover",
               href: "/logout",
               children: "\u0412\u0438\u0439\u0442\u0438"
-            }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+            }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
               className: "nav-link text-white-hover",
-              href: "/register",
+              to: "/register",
               children: "\u0420\u0435\u0454\u0441\u0442\u0440\u0430\u0446\u0456\u044F"
             })
           })]
@@ -2582,8 +2582,6 @@ var app = document.getElementById("app");
 var categories = JSON.parse(app.getAttribute("data-categories"));
 var products = JSON.parse(app.getAttribute("data-products"));
 var user = JSON.parse(app.getAttribute("data-user"));
-console.log("\n\n\nuser");
-console.log(user);
 
 function FrontEnd() {
   var cart = {
@@ -2630,6 +2628,12 @@ function FrontEnd() {
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Route, {
         path: "/admin-panel",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_pages_AdminPanel__WEBPACK_IMPORTED_MODULE_8__.default, {})
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Route, {
+        path: "/login",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_pages_auth_Login__WEBPACK_IMPORTED_MODULE_9__.default, {})
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Route, {
+        path: "/register",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_pages_auth_Register__WEBPACK_IMPORTED_MODULE_10__.default, {})
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Route, {
         path: "/",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_pages_Home__WEBPACK_IMPORTED_MODULE_2__.default, {
@@ -3984,16 +3988,44 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 function Login() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-      className: "container",
+      className: "container d-flex justify-content-center align-items-center",
       style: {
-        minHeight: 'calc(100vh - 70px)'
+        minHeight: "calc(100vh - 70px)"
       },
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
-        className: "pt-5",
-        children: "Login page"
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("form", {
+        action: "/login",
+        method: "POST",
+        className: "d-flex justify-content-center align-items-center flex-column",
+        style: {
+          width: "100%",
+          maxWidth: "450px"
+        },
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
+          children: "\u0410\u0432\u0442\u043E\u0440\u0438\u0437\u0430\u0446\u0456\u044F"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+          type: "text",
+          hidden: true,
+          name: "_token",
+          value: csrf_token
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+          type: "email",
+          name: "email",
+          placeholder: "\u0415\u043B\u0435\u043D\u0442\u0440\u043E\u043D\u043D\u0430 \u043F\u043E\u0448\u0442\u0430",
+          className: "w-100 mt-3 form-control"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+          name: "password",
+          type: "password",
+          placeholder: "\u041F\u0430\u0440\u043E\u043B\u044C",
+          className: "w-100 mt-3 form-control"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+          type: "submit",
+          className: "w-100 mt-3 btn btn-secondary",
+          children: "\u0423\u0432\u0456\u0439\u0442\u0438"
+        })]
       })
     })
   });
@@ -4022,98 +4054,65 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function Register() {
+  function submitHandler(e) {
+    e.preventDefault();
+    var form = document.getElementById("form");
+    var formData = new FormData(form);
+    fetch("/register", {
+      method: "POST",
+      body: formData
+    }).then(function (result) {
+      if (result.ok) {
+        location.href = "/login";
+      }
+    });
+  }
+
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-      className: "container",
+      className: "container d-flex justify-content-center align-items-center",
       style: {
-        paddingTop: "100px",
         minHeight: "calc(100vh - 70px)"
       },
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("form", {
-        action: "/register",
+        id: "form",
+        onSubmit: submitHandler,
+        className: "d-flex justify-content-center align-items-center flex-column",
         style: {
-          backgroundColor: "white",
-          textAlign: "center",
-          border: "2px black solid",
-          borderRadius: "10px",
-          padding: "20px 40px"
+          width: "100%",
+          maxWidth: "450px"
         },
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
-          hidden: true,
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
+          children: "\u0420\u0435\u0433\u0456\u0441\u0442\u0440\u0430\u0446\u0456\u044F"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
           type: "text",
+          hidden: true,
           name: "_token",
           value: csrf_token
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h1", {
-          children: "\u0420\u0435\u0454\u0441\u0442\u0440\u0430\u0446\u0456\u044F"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-          style: {
-            width: "100%",
-            maxWidth: "750px",
-            // backgroundColor: "red",
-            margin: "auto"
-          },
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
-            className: "",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-              className: "row",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-                className: "col-12 col-md",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-                  className: "text-right",
-                  children: "\u0415\u043B\u0435\u043A\u0442\u0440\u043E\u043D\u043D\u0430 \u043F\u043E\u0448\u0442\u0430:"
-                })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-                className: "col-12 col-md",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
-                  type: "text",
-                  name: "email",
-                  placeholder: "Email"
-                })
-              })]
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
-            className: "",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-              className: "row",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-                className: "col-12 col-md",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-                  className: "text-right",
-                  children: "\u0406\u043C'\u044F:"
-                })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-                className: "col-12 col-md",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
-                  type: "text",
-                  name: "name",
-                  placeholder: "\u0406\u043C'\u044F"
-                })
-              })]
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
-            className: "",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-              className: "row",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-                className: "col-12 col-md",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-                  className: "text-right",
-                  children: "\u041F\u0430\u0440\u043E\u043B\u044C:"
-                })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-                className: "col-12 col-md",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
-                  type: "password",
-                  name: "password",
-                  placeholder: "\u041F\u0430\u0440\u043E\u043B\u044C"
-                })
-              })]
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
-            type: "submit",
-            className: "btn",
-            children: "\u0417\u0430\u0440\u0435\u0454\u0441\u0442\u0440\u0443\u0432\u0430\u0442\u0438\u0441\u044F"
-          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+          type: "text",
+          name: "name",
+          placeholder: "\u0412\u0430\u0448\u0435 \u0456\u043C'\u044F",
+          className: "w-100 mt-3 form-control"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+          type: "email",
+          name: "email",
+          placeholder: "\u0415\u043B\u0435\u043D\u0442\u0440\u043E\u043D\u043D\u0430 \u043F\u043E\u0448\u0442\u0430",
+          className: "w-100 mt-3 form-control"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+          name: "password",
+          type: "password",
+          placeholder: "\u041F\u0430\u0440\u043E\u043B\u044C",
+          className: "w-100 mt-3 form-control"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+          name: "password_confirmation",
+          type: "password",
+          placeholder: "\u041F\u0456\u0434\u0442\u0432\u0435\u0440\u0434\u0456\u0442\u044C \u043F\u0430\u0440\u043E\u043B\u044C",
+          className: "w-100 mt-3 form-control"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+          type: "submit",
+          className: "w-100 mt-3 btn btn-secondary",
+          children: "\u0423\u0432\u0456\u0439\u0442\u0438"
         })]
       })
     })
