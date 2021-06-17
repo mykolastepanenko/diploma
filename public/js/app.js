@@ -2744,7 +2744,10 @@ function AdminPanel() {
       isEditCategory = _React$useState20[0],
       setIsEditCategory = _React$useState20[1];
 
-  var _React$useState21 = react__WEBPACK_IMPORTED_MODULE_0__.useState(new Array(products.length)),
+  var editProductValue = new Array(products.length);
+  editProductValue.fill(false);
+
+  var _React$useState21 = react__WEBPACK_IMPORTED_MODULE_0__.useState(editProductValue),
       _React$useState22 = _slicedToArray(_React$useState21, 2),
       isEditProduct = _React$useState22[0],
       setIsEditProduct = _React$useState22[1];
@@ -2760,6 +2763,39 @@ function AdminPanel() {
       _React$useState24 = _slicedToArray(_React$useState23, 2),
       editCategoryName = _React$useState24[0],
       setEditCategoryName = _React$useState24[1];
+
+  var productNameValue = new Array(products.length);
+
+  for (var _i2 = 0; _i2 < products.length; _i2++) {
+    productNameValue[_i2] = products[_i2].name;
+  }
+
+  var productPriceValue = new Array(products.length);
+
+  for (var _i3 = 0; _i3 < products.length; _i3++) {
+    productPriceValue[_i3] = products[_i3].price;
+  }
+
+  var productCountValue = new Array(products.length);
+
+  for (var _i4 = 0; _i4 < products.length; _i4++) {
+    productCountValue[_i4] = products[_i4].count;
+  }
+
+  var _React$useState25 = react__WEBPACK_IMPORTED_MODULE_0__.useState(productNameValue),
+      _React$useState26 = _slicedToArray(_React$useState25, 2),
+      editProductName = _React$useState26[0],
+      setEditProductName = _React$useState26[1];
+
+  var _React$useState27 = react__WEBPACK_IMPORTED_MODULE_0__.useState(productPriceValue),
+      _React$useState28 = _slicedToArray(_React$useState27, 2),
+      editProductPrice = _React$useState28[0],
+      setEditProductPrice = _React$useState28[1];
+
+  var _React$useState29 = react__WEBPACK_IMPORTED_MODULE_0__.useState(productCountValue),
+      _React$useState30 = _slicedToArray(_React$useState29, 2),
+      editProductCount = _React$useState30[0],
+      setEditProductCount = _React$useState30[1];
 
   function submitHandler(e) {
     e.preventDefault();
@@ -3043,31 +3079,88 @@ function AdminPanel() {
             children: item.id
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
             className: "col",
-            children: item.name
+            children: isEditProduct[index] === false ? item.name : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+              className: "w-100",
+              type: "text",
+              value: editProductName[index],
+              onChange: function onChange(e) {
+                var arr = isEditProduct;
+                arr[index] = e.target.value;
+                setEditProductName(arr);
+                setRender(!render);
+              }
+            })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
             className: "col",
-            children: item.price
+            children: isEditProduct[index] === false ? item.price : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+              className: "w-100",
+              type: "text",
+              value: editProductPrice[index],
+              onChange: function onChange(e) {
+                var arr = isEditProduct;
+                arr[index] = e.target.value;
+                setEditProductPrice(arr);
+                setRender(!render);
+              }
+            })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
             className: "col",
-            children: item.count
+            children: isEditProduct[index] === false ? item.count : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+              className: "w-100",
+              type: "text",
+              value: editProductCount[index],
+              onChange: function onChange(e) {
+                var arr = isEditProduct;
+                arr[index] = e.target.value;
+                setEditProductCount(arr);
+                setRender(!render);
+              }
+            })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
             className: "col",
             children: item.category
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
             className: "col",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
-              className: "btn " + (index % 2 === 0 ? "btn-outline-secondary" : "btn-outline-light"),
+            children: isEditProduct[index] === false ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+              className: index % 2 === 0 ? "btn btn-outline-secondary" : "btn btn-outline-light",
+              onClick: function onClick() {
+                var arr = isEditProduct;
+                arr[index] = !arr[index];
+                setIsEditProduct(arr);
+                setRender(!render);
+              },
               children: "\u0420\u0435\u0434\u0430\u0433\u0443\u0432\u0430\u0442\u0438"
+            }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+              className: "btn btn-success",
+              onClick: function onClick() {
+                var arr = isEditProduct;
+                arr[index] = !arr[index];
+                setIsEditProduct(arr);
+                setRender(!render);
+                updateHandler(e.target.id, item.id);
+              },
+              children: "\u0417\u0431\u0435\u0440\u0435\u0433\u0442\u0438"
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
             className: "col",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
-              className: "btn " + (index % 2 === 0 ? "btn-outline-secondary" : "btn-outline-light"),
+            children: isEditProduct[index] === false ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+              className: index % 2 === 0 ? "btn btn-outline-secondary" : "btn btn-outline-light",
               id: "deleteProduct",
               onClick: function onClick(e) {
                 return deleteHandler(e.target.id, item.id);
               },
               children: "\u0412\u0438\u0434\u0430\u043B\u0438\u0442\u0438"
+            }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+              className: "btn btn-danger",
+              id: "deleteProduct",
+              onClick: function onClick(e) {
+                console.log("edit func");
+                var arr = isEditProduct;
+                arr[index] = !arr[index];
+                setIsEditProduct(arr);
+                setRender(!render);
+              },
+              children: "\u0417\u0430\u043A\u0440\u0438\u0442\u0438"
             })
           })]
         }, index);

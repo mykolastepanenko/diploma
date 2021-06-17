@@ -25,8 +25,10 @@ export default function AdminPanel() {
     const [isEditCategory, setIsEditCategory] =
         React.useState(editCategoryValue);
 
+        const editProductValue = new Array(products.length);
+        editProductValue.fill(false);
     const [isEditProduct, setIsEditProduct] = React.useState(
-        new Array(products.length)
+        editProductValue
     );
 
     let categoryNameValue = new Array(categories.length);
@@ -36,6 +38,26 @@ export default function AdminPanel() {
     }
     const [editCategoryName, setEditCategoryName] =
         React.useState(categoryNameValue);
+
+        let productNameValue = new Array(products.length);
+        for (let i = 0; i < products.length; i++) {
+            productNameValue[i] = products[i].name;
+        }
+        let productPriceValue = new Array(products.length);
+        for (let i = 0; i < products.length; i++) {
+            productPriceValue[i] = products[i].price;
+        }
+        let productCountValue = new Array(products.length);
+        for (let i = 0; i < products.length; i++) {
+            productCountValue[i] = products[i].count;
+        }
+        const [editProductName, setEditProductName] =
+            React.useState(productNameValue);
+        const [editProductPrice, setEditProductPrice] =
+            React.useState(productPriceValue);
+        const [editProductCount, setEditProductCount] =
+            React.useState(productCountValue);
+
 
     function submitHandler(e) {
         e.preventDefault();
@@ -287,37 +309,114 @@ export default function AdminPanel() {
                         }
                     >
                         <div className="col-1">{item.id}</div>
-                        <div className="col">{item.name}</div>
-                        <div className="col">{item.price}</div>
-                        <div className="col">{item.count}</div>
-                        <div className="col">{item.category}</div>
                         <div className="col">
-                            <button
-                                className={
-                                    "btn " +
-                                    (index % 2 === 0
-                                        ? "btn-outline-secondary"
-                                        : "btn-outline-light")
-                                }
-                            >
-                                Редагувати
-                            </button>
+                            {isEditProduct[index] === false ? (
+                                item.name
+                            ) : (
+                                <input
+                                    className={"w-100"}
+                                    type="text"
+                                    value={editProductName[index]}
+                                    onChange={(e) => {
+                                        let arr = isEditProduct;
+                                        arr[index] = e.target.value;
+                                        setEditProductName(arr);
+                                        setRender(!render);
+                                    }}
+                                />
+                            )}
                         </div>
                         <div className="col">
-                            <button
-                                className={
-                                    "btn " +
-                                    (index % 2 === 0
-                                        ? "btn-outline-secondary"
-                                        : "btn-outline-light")
-                                }
-                                id="deleteProduct"
-                                onClick={(e) =>
-                                    deleteHandler(e.target.id, item.id)
-                                }
-                            >
-                                Видалити
-                            </button>
+                            {isEditProduct[index] === false ? (
+                                item.price
+                            ) : (
+                                <input
+                                    className={"w-100"}
+                                    type="text"
+                                    value={editProductPrice[index]}
+                                    onChange={(e) => {
+                                        let arr = isEditProduct;
+                                        arr[index] = e.target.value;
+                                        setEditProductPrice(arr);
+                                        setRender(!render);
+                                    }}
+                                />
+                            )}
+                        </div>
+                        <div className="col">
+                            {isEditProduct[index] === false ? (
+                                item.count
+                            ) : (
+                                <input
+                                    className={"w-100"}
+                                    type="text"
+                                    value={editProductCount[index]}
+                                    onChange={(e) => {
+                                        let arr = isEditProduct;
+                                        arr[index] = e.target.value;
+                                        setEditProductCount(arr);
+                                        setRender(!render);
+                                    }}
+                                />
+                            )}
+                        </div>
+                        <div className="col">
+                            {item.category}
+                        </div>
+                        <div className="col">
+                            {isEditProduct[index] === false ? (
+                                <button
+                                    className={index % 2 === 0 ? "btn btn-outline-secondary" : "btn btn-outline-light"}
+                                    onClick={() => {
+                                        let arr = isEditProduct;
+                                        arr[index] = !arr[index];
+                                        setIsEditProduct(arr);
+                                        setRender(!render);
+                                    }}
+                                >
+                                    Редагувати
+                                </button>
+                            ) : (
+                                <button
+                                    className="btn btn-success"
+                                    onClick={() => {
+                                        let arr = isEditProduct;
+                                        arr[index] = !arr[index];
+                                        setIsEditProduct(arr);
+                                        setRender(!render);
+                                        updateHandler(e.target.id, item.id);
+                                    }}
+                                >
+                                    Зберегти
+                                </button>
+                            )}
+                        </div>
+                        <div className="col">
+                            {isEditProduct[index] === false ? (
+                                <button
+                                    className={index % 2 === 0 ? "btn btn-outline-secondary" : "btn btn-outline-light"}
+                                    id="deleteProduct"
+                                    onClick={(e) =>
+                                        deleteHandler(e.target.id, item.id)
+                                    }
+                                >
+                                    Видалити
+                                </button>
+                            ) : (
+                                <button
+                                    className="btn btn-danger"
+                                    id="deleteProduct"
+                                    onClick={(e) => {
+                                        console.log("edit func");
+                                        let arr = isEditProduct;
+                                        arr[index] = !arr[index];
+                                        setIsEditProduct(arr);
+                                        setRender(!render);
+                                    }}
+                                >
+                                    Закрити
+                                </button>
+                            )}
                         </div>
                     </div>
                 ))}
